@@ -5,6 +5,164 @@
 
 
 
+.header{
+    padding: 60px 0;
+&__inner{
+    padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+&__logo{
+    display: flex;
+    font-weight: 500px;
+    font-size: 36px;
+    color:$top;
+    position: absolute;
+}
+&__image{
+    margin-right: 10px;
+}
+   }
+.menu{
+  margin: 0 auto;
+    &__list{
+        display: flex;
+        margin-right: 20px;
+    }
+    &__item:not(:last-child){
+        margin-right: 35px;
+    }
+    &__link{
+      color: $top;
+     font-weight: 500;
+    }
+}
+.user{
+    display: flex; 
+    position: absolute;
+    right: 0;
+    top:-12px;
+    &__searching{
+        width: 50px;
+        height: 50px;
+        background-color: $grey;
+        border-radius: 50%;
+        display: flex;
+         margin-right: 20px;
+         cursor: pointer;
+    }
+    
+    &__search{
+        background-image: url('../images/search.svg');
+        @extend %icons;
+        @extend %btn;
+        margin-right: 15px;
+    }
+       &__likes{
+        padding: 17px 35px;
+        background-color: $bg;
+        border-radius: 25px 0 0 25px;
+       }
+        &__heart{
+            background-image: url('../images/heart.svg');
+                @extend %icons;
+                position: relative;
+                top: 5px;
+                left: 5px;
+                @extend %btn;
+               
+            }
+        &__orders{
+            padding: 17px 35px;
+            background-color: $bg;
+            margin-right: 15px;
+            border-radius:  0 25px 25px 0 ;
+            position: relative;
+            &::after{
+                content: "";
+                position: absolute;
+                width: 1px;
+                height: 25px;
+                top: 13px;
+                left: 0;
+                background-color: $white;
+
+            }
+        }
+        &__cart{
+                background-image: url('../images/cart.svg');
+                @extend %icons;
+                position: relative;
+                @extend %btn;
+                bottom: -5px;
+                right: 5px;
+            }
+            &__num{
+                @extend %dmsans-400;
+                @extend %center;
+                font-size: 10px;
+                height: 16px;
+                width: 16px;
+                border-radius: 50%;
+                background-color: $white;
+                position: absolute;
+                top: -8px;
+                right: -7px;
+              
+            }
+        &__item{
+
+            height: 51px;
+            width: 51px;
+            margin-right: 10px;
+            border-radius: 50%;
+            background-color: $btn;
+            @extend %center;
+            @extend %btn;
+        }
+        &__box{
+            width: 20px;
+            background-color: transparent;
+            border-top: 5px dotted $white;
+            height: 0;
+            position: relative;
+            @extend %btn;
+        &::after,&::before{
+            content: "";
+            position: absolute;
+            width: 20px;
+            border-top: 5px dotted $white;
+            left: 0;
+        }
+        &::after{
+            top: 3px;
+        }
+        &::before{
+            bottom: 10px;
+        }
+            
+        }
+        }
+    
+     
+    
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+      
 
 
 
@@ -20,18 +178,4 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@import 'media';
+ 
