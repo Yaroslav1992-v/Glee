@@ -3,7 +3,25 @@
 @import 'reset';
 @import 'global';
 
+.logo{
+    display: flex;
+    font-weight: 500px;
+    font-size: 36px;
+    color:$top;
+    position: relative;
+    left: 75px;
 
+    &::before{
+        content: "";
+        position: absolute;
+        background-image: url('../images/logo.svg');
+        background-repeat: no-repeat;
+        height: 61px;
+        width: 50px;
+        left: -65px;
+        top: 7px;
+    }
+}
 
 .header{
     padding: 60px 0;
@@ -15,11 +33,7 @@
   position: relative;
 }
 &__logo{
-    display: flex;
-    font-weight: 500px;
-    font-size: 36px;
-    color:$top;
-    position: absolute;
+      position: absolute;
 }
 &__image{
     margin-right: 10px;
@@ -145,7 +159,92 @@
             
         }
         }
-    
+    .footer{
+        padding-top: 83px;
+        font-size: 14px;
+        color:$footeerlinks;
+        &__logo{
+            top: -25px;
+            left: 65px;
+           
+        }
+        &__nav{
+            padding: 15px;
+            width: 25%;
+        }
+        &__link{
+            
+            color: $footeerlinks;
+        }
+        &__top{
+            display: flex;
+            margin-bottom: 55px;
+        }
+        
+        &__title{
+            @extend %dmsans-700;
+            font-size: 16px;
+            color: $footertitles;
+            margin-bottom: 19px;
+            text-transform: uppercase;
+        }
+        &__item:not(:last-child){
+            margin-bottom: 12px;
+        }
+        &__input{
+            max-width: 135px;
+            background-color: $section;
+            border: none;
+            padding: 0 15px;
+            height: 40px;
+        
+        &::placeholder{
+            color: #234969;
+        }}
+        &__btn{
+            color: $white;
+            background-color: $btn;
+            padding: 9px 18px;
+            @extend %btn;
+        }
+        &__text{
+            max-width: 245px;
+            margin-bottom: 35px;
+            line-height: 1.6;
+        }
+    }
+         
+    .adress{
+        line-height: 1.4;
+        
+        &__text {
+            max-width: 190px;
+        }
+         &__text:not(:last-child){
+             margin-bottom: 15px;
+         }
+        &__phone, &__email {
+            color:$footeerlinks;
+        }
+    }
+    .copy{
+        border-top: 1px solid $btn;
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 5px 30px 10px;
+        &__list{
+            display: flex;
+        }
+        &__item{
+            padding: 0 15px;
+        }
+        &__item:first-child{
+            padding-left: 0;
+        }
+        &__item:not(:last-child){
+            border-right: 1px solid $footertitles;
+        }
+    }
      
     
 
