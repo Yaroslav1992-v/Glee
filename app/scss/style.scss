@@ -185,6 +185,7 @@
     &__logo {
         top: -25px;
         left: 65px;
+        max-width: 125px;
     }
 
     &__nav {
@@ -194,6 +195,10 @@
 
     &__link {
         color: $footeerlinks;
+        transition: color ease 0.5s;
+        &:hover{
+            color:$bg;
+        }
     }
 
     &__top {
@@ -220,6 +225,9 @@
         padding: 0 15px;
         height: 40px;
         outline: transparent;
+        &:focus{
+            border: 1px solid $btn;
+        }
         &::placeholder {
             color: #234969;
         }
