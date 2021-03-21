@@ -323,6 +323,7 @@
         font-size: 72px;
         @extend %rubik-500;
         line-height: 1;
+        text-transform: uppercase;
         color: $title;
         margin-bottom: 30px;
     }
