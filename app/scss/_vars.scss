@@ -1,7 +1,6 @@
 $top : #436372;
 $default : #191919;
 $bg: #fcd7b6;
-$btnfont: #fff;
 $title :#243f4d;
 $infotitle: #414141;  
 $main :#585858;
@@ -9,20 +8,20 @@ $news: #262626;
 $date: #222933;
 $footertitles: #1f2044;
 $footeerlinks : #7b7b7b;
-$btn: #a3bbc8;
+$btn: #a3bbc8;  
 $white: #fff;
 $grey: #edf1f4;
 $section: #fef7f0;
+$item :#8b8b8b;
 %dmsans-400{
     font-family: 'DMSans', sans-serif;
     font-weight: 400;
 }
 %dmsans-500{
     font-family: 'DMSans', sans-serif;
-    font-weight: 500;
 }
 %dmsans-700{
-    font-family: 'DMSans-Bold', sans-serif;
+    font-family: 'DMSans', sans-serif;
     font-weight: 700;
 }
 
@@ -35,21 +34,31 @@ $section: #fef7f0;
     font-weight: 500;
 }
 %icons{
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-color: transparent;
-    width: 19px;
-    height: 17px;
-    text-align: center;
-    display: flex;
-    margin: auto;
-}
-%center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    cursor: pointer;
+    transition: background-color ease 0.3s;
+    &:hover{
+        background-color:$top;
+        path{
+            transition: fill  ease 0.3s;
+           fill: $white;
+        }
+    }}
 %btn{
     cursor: pointer;
     outline: transparent; 
 }
+%card-btn{
+    @extend %dmsans-700;
+    color: $item;
+    @extend %btn;
+    background-color: transparent;
+    transition: color ease 0.5s;
+    margin-bottom: 85px;
+    &:hover{
+        color: $bg;
+    } 
+    &:focus{
+        color: $default;
+    }
+}
+

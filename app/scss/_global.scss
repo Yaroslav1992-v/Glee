@@ -9,14 +9,14 @@ body {
 
 }
 .container-big {
-	max-width: 1790px;
-	margin: 0 auto;
-	padding: 0 10px;
+    max-width: 1770px;
+    margin: 0 auto;
+    padding: 0 10px;
 }
 .container{
 	max-width: 1200px;
-	margin: 0 auto;
-	padding: 0 10px;
+    margin: 0 auto;
+    padding: 0 10px;
 }
 a{
 	text-decoration: none;
@@ -33,4 +33,10 @@ a{
 	clip-path: inset(100%);
 	clip: rect(0, 0, 0, 0);
 	overflow: hidden;
+}
+.title{
+	@extend %dmsans-700;
+	font-size: 36px;
+	text-align: center;
+	margin-bottom: 20px;
 }
