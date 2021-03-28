@@ -1,0 +1,107 @@
+.design {
+    padding-bottom: 10px;
+
+    &__cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-right: -30px;
+        margin-bottom: 85px;
+    }
+
+    &__item {
+        background-repeat: no-repeat;
+        background-size: cover;
+        max-width: 370px;
+        height: 245px;
+        /*вроде высота не слишком большая */
+        width: 100%;
+        padding: 35px;
+        margin-right: 30px;
+        margin-bottom: 35px;
+        background-color: $white-300;
+        @extend %dmsans-700;
+    }
+
+    &__name {
+        max-width: 175px;
+        font-size: 20px;
+        color: $black-100;
+        @include text-clamp;
+    }
+
+    &__style {
+        color: $blue-grey;
+        display: block;
+    }
+
+}
+
+.video {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        background-color: $black-100;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    &__popup {
+        height: 47vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        display: flex;
+        transition: opacity ease 0.5s;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 2;
+        position: relative;
+
+        &:hover {
+            opacity: 0.7;
+
+            .video__svg {
+                height: 35px;
+                width: 35px;
+            }
+
+            &::before {
+                background-color: $black-300;
+            }
+
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            background-color: $blue-grey;
+            border-radius: 50%;
+            transition: background-color, opacity ease 0.5s;
+        }
+
+        &::before {
+            width: 98px;
+            height: 98px;
+        }
+
+        &::after {
+            opacity: 0.4;
+            width: 127px;
+            height: 127px;
+        }
+    }
+
+    &__svg {
+        position: relative;
+        fill: $white;
+        transition: all ease 0.5s;
+
+    }
+}

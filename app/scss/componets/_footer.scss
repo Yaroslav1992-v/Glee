@@ -1,0 +1,144 @@
+.footer {
+    padding-top: 70px;
+    font-size: 14px;
+    color: $grey-200;
+
+    &__top {
+        display: flex;
+        position: relative;
+        margin-bottom: 32px;
+    }
+
+    &__nav {
+        &:not(:last-child) {
+            padding: 15px;
+        }
+
+        &:last-child {
+            padding: 20px 0 0 20px;
+        }
+
+        width: 25%;
+    }
+
+    &__link {
+        color: $grey-200;
+        border: 1px solid transparent;
+        transition: color border-color ease 0.5s;
+        @include actions-100
+    }
+
+    &__title {
+        @extend %dmsans-700;
+        color: $black-300;
+        margin-bottom: 19px;
+        text-transform: uppercase;
+    }
+
+    &__item:not(:last-child) {
+        margin-bottom: 12px;
+    }
+
+    &__input {
+        max-width: 170px;
+        margin-right: -2px;
+        background-color: $white-200;
+        border: 1px solid transparent;
+        padding: 0 15px;
+        height: 40px;
+        outline: transparent;
+
+        &:focus {
+            border-color: $blue-grey;
+        }
+
+        &::placeholder {
+            color: #234969;
+        }
+    }
+
+    &__btn {
+        color: $white;
+        background-color: $blue-grey;
+        padding: 8px 17px;
+        transition: background-color ease 0.5s;
+
+        &:hover {
+            background-color: $blue-dark;
+        }
+
+        &:focus {
+            background-color: $black-600;
+        }
+
+        &:active {
+            color: $orange;
+            background-color: $black-200;
+        }
+    }
+
+    &__text {
+        max-width: 245px;
+        margin-bottom: 35px;
+        line-height: 1.6;
+        @include text-clamp;
+    }
+}
+
+.adress {
+    padding: 55px 0;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4;
+
+    &__text {
+        max-width: 190px;
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__link {
+        color: $grey-200;
+    }
+}
+
+.copy {
+    border-top: 1px solid $blue-grey;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 5px 30px 10px;
+}
+
+.footer__menu {
+    .menu {
+        &__item {
+            padding: 0 15px;
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                padding-right: 0;
+            }
+
+            &:not(:last-child) {
+                margin-right: 0;
+                border-right: 1px solid $black-300;
+            }
+        }
+
+        &__link {
+            padding: 3px 0;
+            font-size: 14px;
+            border-bottom: 1px solid transparent;
+            color: $grey-100;
+            @extend %rubik-400;
+            @include actions-100
+        }
+
+    }
+}

@@ -1,27 +1,26 @@
-
 body {
-    color :$default;
-    @extend %rubik-400;
-    line-height: 1.5;
-	font-size: 15px;
+	color: $black-100;
+	@extend %rubik-400;
+	line-height: 1.5;
+	font-size: 16px;
 	background-color: $white;
 }
-a{
+
+a {
 	text-decoration: none;
+	color: $blue-dark;
 }
-.container-big {
-    max-width: 1770px;
-    margin: 0 auto;
-    padding: 0 10px;
+
+
+.container {
+	max-width: 1190px;
+	margin: 0 auto;
+	padding: 0 10px;
+
+	&--big {
+		max-width: 1790px;
+	}
 }
-.container{
-	max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 10px;
-}
-a{
-	text-decoration: none;
-  }
 
 .visually-hidden {
 	position: absolute;
@@ -35,9 +34,107 @@ a{
 	clip: rect(0, 0, 0, 0);
 	overflow: hidden;
 }
-.title{
+
+.title {
 	@extend %dmsans-700;
 	font-size: 36px;
 	text-align: center;
-	margin-bottom: 20px;
+	margin-bottom: 15px;
+}
+
+.logo {
+	position: absolute;
+	left: 0;
+}
+
+.product-card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 10px 10px 25px;
+	border-radius: 10px;
+	box-shadow: 0 6px 47px 3px rgba(37, 37, 37, 0.05);
+
+	&:hover {
+		.product-card__icons {
+			opacity: 1;
+		}
+
+	}
+
+	&__img {
+		margin-bottom: 80px;
+		height: 205px;
+		display: flex;
+		align-items: flex-end;
+	}
+
+
+	&__name {
+		color: $black-600;
+		@extend %dmsans-500;
+		font-size: 16px;
+		margin-bottom: 5px;
+		@include text-clamp;
+		-webkit-line-clamp: 1;
+	}
+
+
+	&__price {
+		@extend %dmsans-700;
+		color: $blue-grey;
+		@include text-clamp;
+		-webkit-line-clamp: 1;
+	}
+
+	&__icons {
+		position: absolute;
+		top: 50%;
+		display: flex;
+		opacity: 0;
+		transition: opacity ease 0.8s;
+	}
+
+	&__icon {
+		@include center;
+		@include icon;
+
+		&:not(:last-child) {
+			margin-right: 15px;
+		}
+
+		box-shadow: 0 10px 47px 10px rgba(37, 37, 37, 0.05);
+		background-color: $white;
+		border-radius: 50%;
+		height: 45px;
+		width: 45px;
+		outline: transparent;
+		transition: background-color ease 0.5s;
+		cursor: pointer;
+	}
+
+	&__svg {
+		fill: $blue-grey;
+	}
+}
+
+.mix-nav {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-bottom: 70px;
+
+	&__item {
+		margin-right: 15px;
+	}
+
+	&__btn {
+		@extend %dmsans-700;
+		color: $grey;
+		background-color: transparent;
+		transition: color ease 0.5s;
+		@include actions
+	}
 }

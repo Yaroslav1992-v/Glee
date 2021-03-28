@@ -1,64 +1,134 @@
-$top : #436372;
-$default : #191919;
-$bg: #fcd7b6;
-$title :#243f4d;
-$infotitle: #414141;  
-$main :#585858;
-$news: #262626;
-$date: #222933;
-$footertitles: #1f2044;
-$footeerlinks : #7b7b7b;
-$btn: #a3bbc8;  
+$blue-dark : #436372;
+$orange: #fcd7b6;
+$blue-grey: #a3bbc8;
 $white: #fff;
-$grey: #edf1f4;
-$section: #fef7f0;
-$item :#8b8b8b;
-%dmsans-400{
+$white-100: #edf1f4;
+$white-200 : #fef7f0;
+$white-300 : #f8f8f8;
+$grey :#8b8b8b;
+$grey-100 : #7b7b7b;
+$grey-200 : #585858;
+$black-100 : #191919;
+$black-200 : #414141;
+$black-300 : #1f2044;
+$black-400 : #222933;
+$black-500 : #262626;
+$black-600 : #243f4d;
+
+
+%dmsans-400 {
     font-family: 'DMSans', sans-serif;
     font-weight: 400;
 }
-%dmsans-500{
+
+%dmsans-500 {
     font-family: 'DMSans', sans-serif;
+    font-weight: 500;
 }
-%dmsans-700{
+
+%dmsans-700 {
     font-family: 'DMSans', sans-serif;
     font-weight: 700;
 }
 
-%rubik-400{
+%rubik-400 {
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
 }
-%rubik-500{
+
+%rubik-500 {
     font-family: 'Rubik', sans-serif;
     font-weight: 500;
 }
-%icons{
+
+%poppins-700 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+@mixin icon {
     cursor: pointer;
     transition: background-color ease 0.3s;
-    &:hover{
-        background-color:$top;
-        path{
-            transition: fill  ease 0.3s;
-           fill: $white;
+
+    &:focus {
+        background-color: $grey;
+
+    }
+
+    &:hover {
+        background-color: $blue-dark;
+
+        svg {
+            transition: fill ease 0.3s;
+            fill: $white;
         }
-    }}
-%btn{
-    cursor: pointer;
-    outline: transparent; 
-}
-%card-btn{
-    @extend %dmsans-700;
-    color: $item;
-    @extend %btn;
-    background-color: transparent;
-    transition: color ease 0.5s;
-    margin-bottom: 85px;
-    &:hover{
-        color: $bg;
-    } 
-    &:focus{
-        color: $default;
+    }
+
+    &:active {
+        background-color: $grey-200;
     }
 }
 
+@mixin center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin actions {
+    border-bottom: 1px solid transparent;
+
+    &:focus {
+        color: $black-100;
+    }
+
+    &:hover {
+        color: $orange;
+    }
+
+    &:active {
+        border-color: $orange;
+    }
+}
+
+@mixin actions-100 {
+    &:focus {
+        color: $black-300;
+    }
+
+    &:active {
+        border-color: $black-300;
+    }
+
+    &:hover {
+        color: $blue-grey;
+    }
+
+}
+
+@mixin text-clamp($lines: 3, $line-height: false) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+
+    @if $line-height {
+        max-height: $line-height * $lines * 1px;
+    }
+}
+
+@function max($numbers...) {
+    @return m#{a}x(#{$numbers});
+}
+
+@function min($numbers...) {
+    @return m#{i}n(#{$numbers});
+}
+
+@function max($numbers...) {
+    @return m#{a}x(#{$numbers});
+}
+
+@function mix($numbers...) {
+    @return m#{i}n(#{$numbers});
+}

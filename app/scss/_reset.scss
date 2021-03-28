@@ -2,6 +2,7 @@ html {
     box-sizing: border-box;
 }
 
+*,
 *::after,
 *::before {
     box-sizing: inherit;
@@ -27,8 +28,7 @@ dd {
 }
 
 ol,
-ul
- {
+ul {
     padding: 0;
 }
 
@@ -49,5 +49,8 @@ select {
 }
 
 button {
+    background-color: transparent;
     border-width: 0;
+    outline: transparent;
+    cursor: pointer;
 }
