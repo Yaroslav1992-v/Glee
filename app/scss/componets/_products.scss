@@ -10,7 +10,7 @@
     }
 
     &__card {
-        margin-bottom: 50px;
+        margin-bottom: 40px;
         max-width: 270px;
         width: 100%;
         margin-right: 30px;
@@ -23,92 +23,13 @@
     }
 
     &__item {
-        background-image: -webkit-linear-gradient(top, transparent 20%, #fcd7b6 10.001%);
         max-width: 870px;
         width: 100%;
-        padding: 0px 150px 88px;
-        display: flex;
-        align-items: flex-end;
-        position: relative;
-        margin-bottom: 25px;
 
         &:nth-child(odd) {
             margin-right: 30px;
         }
-    }
 
-    &__content {
-        line-height: 1;
-        max-width: 330px;
-        color: $black-600;
-        margin: 0 0 20px auto;
-    }
-
-    &__picture {
-        max-width: 220px;
-    }
-
-    &__name {
-        @include text-clamp;
-        @extend %dmsans-700;
-        font-size: 26px;
-        margin-bottom: 25px;
-    }
-
-    &__description {
-        @include text-clamp;
-        line-height: 1.5;
-        margin-bottom: 60px;
-    }
-
-    &__link {
-        border-radius: 5px;
-        @extend %rubik-500;
-        color: $blue-dark;
-        font-size: 15px;
-        background-color: transparent;
-        padding: 22px 85px 25px 20px;
-        border: 1px solid #b3b7b5;
-        transition: border-color, color, background-color ease 0.5s;
-        position: relative;
-
-        &:focus {
-            border-color: $black-400;
-            background-color: $grey-100;
-            color: $white-100;
-
-            .products__svg {
-                fill: $white-100;
-            }
-        }
-
-        &:hover {
-            color: $white-200;
-            background-color: $grey;
-
-            .products__svg {
-                fill: $white-200;
-                right: 10px;
-            }
-        }
-
-        &:active {
-            background-color: $grey-200;
-
-            .products__svg {
-                fill: $white-100;
-            }
-        }
-    }
-
-    &__svg {
-        position: absolute;
-        background-image: url(../../images/products/arrow.svg);
-        height: 9px;
-        width: 22px;
-        right: 18px;
-        top: 27px;
-        transition: fill, right ease 0.5s;
     }
 
 }

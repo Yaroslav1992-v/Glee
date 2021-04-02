@@ -7,17 +7,16 @@
     &__list {
         position: relative;
         z-index: 2;
-        padding: 0 15px;
 
         &::after {
             content: "";
             position: absolute;
             background-image: linear-gradient(-90deg, #fff, transparent);
             border-radius: 50%;
-            height: 60vh;
-            width: 60vh;
-            right: -110px;
-            top: -120px;
+            height: 59vh;
+            width: 59vh;
+            right: -121px;
+            top: -114px;
             z-index: -1;
         }
     }
@@ -32,20 +31,22 @@
     &__name {
         @include text-clamp;
         font-size: 72px;
-        @extend %rubik-500;
+        @extend %rubik;
+        font-weight: 500;
         line-height: 1;
         text-transform: uppercase;
         color: $black-600;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
         max-width: 500px;
     }
 
     &__content {
         max-width: 380px;
         font-size: 18px;
-        letter-spacing: 0.4px;
+        letter-spacing: 0.1px;
         color: $blue-dark;
-        margin-bottom: 60px;
+        line-height: 1.6;
+        margin-bottom: 55px;
 
         p {
             @include text-clamp;
@@ -54,26 +55,8 @@
     }
 
     &__link {
-        padding: 22px 100px 20px 28px;
         background-color: $blue-grey;
         color: $white;
-        font-size: 15px;
-        position: relative;
-        outline: transparent;
-        transition: background-color ease 0.5s;
-
-        &::after {
-            content: "";
-            position: absolute;
-            background-image: url('../images/arrow.svg');
-            background-size: contain;
-            background-repeat: no-repeat;
-            width: 22px;
-            height: 9px;
-            right: 22px;
-            top: 25px;
-            transition: right ease 0.5s;
-        }
 
         &:focus {
             background-color: $black-300;
@@ -81,10 +64,6 @@
 
         &:hover {
             background-color: $black-100;
-
-            &::after {
-                right: 12px;
-            }
         }
 
         &:active {
@@ -94,6 +73,7 @@
 
     &__img {
         max-height: 260px;
+        padding: 15px 0;
         align-self: flex-end;
         object-fit: contain;
     }
@@ -127,7 +107,8 @@
             height: 30px;
             font-size: 14px;
             border-radius: 50%;
-            @extend %rubik-500;
+            @extend %rubik;
+            font-weight: 500;
             color: $black-600;
         }
     }
@@ -141,7 +122,7 @@
     &__item {
         display: flex;
         justify-content: center;
-        padding: 40px 0px 35px 80px;
+        padding: 40px 0px 40px 95px;
         max-width: 600px;
         width: 100%;
         line-height: 1.8;
@@ -157,6 +138,10 @@
 
     &__content {
         position: relative;
+
+        &--delivery {
+            padding-top: 10px;
+        }
 
         &::before {
             content: "";
@@ -176,26 +161,30 @@
         &--delivery::before {
             background-image: url('../images/delivery.svg');
             height: 35px;
+            left: -80px;
+            top: 16px;
         }
 
         &--payment::before {
             background-image: url('../images/payment.svg');
             height: 45px;
+            left: -85px;
         }
     }
 
     &__title {
-        @extend %dmsans-700;
+        @extend %dmsans;
+        font-weight: 700;
         font-size: 18px;
-        letter-spacing: 0.8px;
         color: $black-200;
         @include text-clamp;
         -webkit-line-clamp: 2;
     }
 
     &__text {
-        max-width: 215px;
-        @extend %dmsans-400;
+        max-width: 214px;
+        @extend %dmsans;
+        font-weight: 400;
         color: $grey-200;
         @include text-clamp
     }

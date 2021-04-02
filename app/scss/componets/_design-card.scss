@@ -1,0 +1,41 @@
+.design-card {
+    height: 245px;
+    width: 100%;
+    padding: 40px 0 0 35px;
+    background-color: $white-300;
+    @extend %dmsans;
+    font-weight: 700;
+
+    &__content {
+        position: relative;
+    }
+
+    &__img {
+        right: 0;
+        top: -40px;
+        left: -35px;
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        max-height: 245px;
+        overflow: hidden;
+    }
+
+    &__name {
+        line-height: 1.2;
+        position: relative;
+        max-width: 175px;
+        font-size: 20px;
+        color: $black-100;
+        margin-bottom: 10px;
+        @include text-clamp;
+    }
+
+
+    &__style {
+        position: relative;
+        font-size: 16px;
+        color: $blue-grey;
+        display: block;
+    }
+}

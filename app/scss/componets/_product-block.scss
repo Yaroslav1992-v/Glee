@@ -1,0 +1,62 @@
+.product-block {
+    background-image: -webkit-linear-gradient(top, transparent 20%, $white-200 10.001%);
+    padding: 0 150px 85px 135px;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    margin-bottom: 25px;
+
+
+
+    &__content {
+        margin-bottom: 35px;
+        max-width: 330px;
+        color: $black-600;
+    }
+
+    &__picture {
+        max-width: 250px;
+        height: 410px;
+        margin-right: auto;
+    }
+
+    &__name {
+        @include text-clamp;
+        @extend %dmsans;
+        font-weight: 700;
+        font-size: 26px;
+        margin-bottom: 18px;
+    }
+
+    &__description {
+        @include text-clamp;
+        line-height: 1.6;
+        margin-bottom: 50px;
+    }
+
+    &__link {
+        border-radius: 5px;
+        color: $blue-dark;
+        background-color: transparent;
+        padding: 20px 85px 20px 20px;
+        border: 1px solid #b3b7b5;
+        transition: border-color, ease 0.5s;
+
+        &:focus {
+            color: $white-300;
+            border-color: $black-400;
+            background-color: $grey-100;
+        }
+
+        &:hover {
+            color: $white-200;
+            background-color: $grey;
+        }
+
+        &:active {
+            background-color: $grey-200;
+
+        }
+    }
+
+}

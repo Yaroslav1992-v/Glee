@@ -1,0 +1,92 @@
+.news-card {
+    background-color: $white;
+    border-radius: 10px;
+    box-shadow: 0 10px 47px 10px rgba(37, 37, 37, 0.05);
+
+
+    &__box {
+        padding: 30px 25px 20px;
+        height: 170px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__img {
+        height: 250px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__link {
+        max-width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        @extend %poppins-700;
+        font-size: 14px;
+        color: $white;
+        padding: 5px 31px;
+        background-color: #a3bbc8;
+        border-radius: 25px;
+        position: absolute;
+        top: -17px;
+        border: 1px solid transparent;
+        transition: background-color ease 0.5s;
+
+        &:focus {
+            border-color: $white-300;
+        }
+
+        &:hover {
+            background-color: $black-500;
+        }
+
+        &:active {
+            background-color: $black-200;
+        }
+    }
+
+    &__title {
+        @extend %dmsans;
+        font-weight: 500;
+        max-width: 300px;
+        font-size: 18px;
+        color: $black-500;
+        padding: 0 5px;
+        line-height: 1.2;
+        @include text-clamp;
+    }
+
+    &__info {
+
+        font-size: 14px;
+        border-top: 1px solid #e0e0e0;
+        display: flex;
+        letter-spacing: -0.7px;
+        padding: 15px 20px 0;
+        overflow: hidden;
+    }
+
+    &__data {
+        position: relative;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: $black-500;
+
+        &:not(:last-child) {
+            margin-right: 37px
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            background-image: url('../images/sprite.svg#calendar');
+            height: 12px;
+            width: 5px;
+            left: -12px;
+            top: 4px;
+            background-size: cover;
+        }
+    }
+}

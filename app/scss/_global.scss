@@ -1,6 +1,7 @@
 body {
 	color: $black-100;
-	@extend %rubik-400;
+	@extend %rubik;
+	font-weight: 400;
 	line-height: 1.5;
 	font-size: 16px;
 	background-color: $white;
@@ -36,89 +37,18 @@ a {
 }
 
 .title {
-	@extend %dmsans-700;
+	@extend %dmsans;
+	font-weight: 700;
 	font-size: 36px;
 	text-align: center;
 	margin-bottom: 15px;
 }
 
 .logo {
-	position: absolute;
-	left: 0;
+	max-height: 50px;
 }
 
-.product-card {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-	padding: 10px 10px 25px;
-	border-radius: 10px;
-	box-shadow: 0 6px 47px 3px rgba(37, 37, 37, 0.05);
 
-	&:hover {
-		.product-card__icons {
-			opacity: 1;
-		}
-
-	}
-
-	&__img {
-		margin-bottom: 80px;
-		height: 205px;
-		display: flex;
-		align-items: flex-end;
-	}
-
-
-	&__name {
-		color: $black-600;
-		@extend %dmsans-500;
-		font-size: 16px;
-		margin-bottom: 5px;
-		@include text-clamp;
-		-webkit-line-clamp: 1;
-	}
-
-
-	&__price {
-		@extend %dmsans-700;
-		color: $blue-grey;
-		@include text-clamp;
-		-webkit-line-clamp: 1;
-	}
-
-	&__icons {
-		position: absolute;
-		top: 50%;
-		display: flex;
-		opacity: 0;
-		transition: opacity ease 0.8s;
-	}
-
-	&__icon {
-		@include center;
-		@include icon;
-
-		&:not(:last-child) {
-			margin-right: 15px;
-		}
-
-		box-shadow: 0 10px 47px 10px rgba(37, 37, 37, 0.05);
-		background-color: $white;
-		border-radius: 50%;
-		height: 45px;
-		width: 45px;
-		outline: transparent;
-		transition: background-color ease 0.5s;
-		cursor: pointer;
-	}
-
-	&__svg {
-		fill: $blue-grey;
-	}
-}
 
 .mix-nav {
 	display: flex;
@@ -127,14 +57,60 @@ a {
 	margin-bottom: 70px;
 
 	&__item {
-		margin-right: 15px;
+		&:not(:last-child) {
+			margin-right: 15px;
+		}
 	}
 
 	&__btn {
-		@extend %dmsans-700;
+		@extend %dmsans;
+		font-weight: 700;
 		color: $grey;
+		border: 1px solid transparent;
 		background-color: transparent;
 		transition: color ease 0.5s;
-		@include actions
+
+		&:focus {
+			border-bottom-color: $blue-grey;
+		}
+
+		&:hover {
+			color: $blue-grey;
+		}
+	}
+
+	.mixitup-control-active {
+		border-color: $orange;
+		color: $orange;
+	}
+}
+
+.link-btn {
+	padding: 20px 102px 20px 28px;
+	font-size: 15px;
+	position: relative;
+	transition: background-color ease 0.5s;
+	outline: transparent;
+	font-weight: 500;
+
+	&__svg {
+		position: absolute;
+		right: 22px;
+		top: 25px;
+		transition: fill, right ease 0.5s;
+	}
+
+	&:focus {
+		.link-btn__svg {
+			fill: $white-200;
+		}
+	}
+
+	&:hover {
+
+		.link-btn__svg {
+			fill: $white-100;
+			right: 10px;
+		}
 	}
 }

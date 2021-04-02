@@ -7,11 +7,12 @@ $(function () {
     autoplaySpeed: 2000,
   });
   $(".silder-brands").slick({
-    autoplay: true,
     arrows: false,
-    slidesToShow: 5,
-    slidesToScroll: 1,
+    infinite: true,
+    autoplay: true,
     autoplaySpeed: 2000,
+    slidesToShow: 5,
+    slidesToScroll: 5,
   });
   var product1 = document.querySelector('[data-ref="product"]');
   var design1 = document.querySelector('[data-ref="design"]');

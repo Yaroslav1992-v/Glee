@@ -1,6 +1,6 @@
 .articles {
     background-image: linear-gradient(to bottom, transparent 50%, $white-200 50%);
-    padding: 90px 0;
+    padding: 95px 0 85px;
 
     &__inner {
         display: flex;
@@ -10,7 +10,8 @@
     }
 
     &__view-all {
-        @extend %dmsans-700;
+        @extend %dmsans;
+        font-weight: 700;
         color: $black-500;
         padding-right: 25px;
         position: relative;
@@ -51,103 +52,27 @@
         flex-wrap: wrap;
         justify-content: center;
         margin-right: -30px;
-        margin-bottom: 65px;
+        margin-bottom: 55px;
     }
 
     &__item {
-        background-color: $white;
-        border-radius: 10px;
         max-width: 370px;
         width: 100%;
-        box-shadow: 0 10px 47px 10px rgba(37, 37, 37, 0.05);
         margin-right: 30px;
         margin-bottom: 30px;
-    }
-
-    &__box {
-        padding: 35px 30px 0;
-        position: relative;
-    }
-
-    &__img {
-        max-height: 250px
-    }
-
-    &__link {
-        @extend %poppins-700;
-        font-size: 14px;
-        color: $white;
-        padding: 5px 31px;
-        background-color: #a3bbc8;
-        border-radius: 25px;
-        position: absolute;
-        top: -17px;
-        border: 1px solid transparent;
-        transition: background-color ease 0.5s;
-
-        &:focus {
-            border-color: $white-300;
-        }
-
-        &:hover {
-            background-color: $black-500;
-        }
-
-        &:active {
-            background-color: $black-200;
-        }
-    }
-
-    &__content {
-        @extend %dmsans-500;
-        max-width: 300px;
-        min-height: 75px;
-        font-size: 18px;
-        color: $black-500;
-        padding: 0 5px 0px;
-        line-height: 1.2;
-        @include text-clamp;
-    }
-
-    &__info {
-        border-top: 1px solid #e0e0e0;
-        font-size: 14px;
-        padding: 20px 10px;
-        display: flex;
-    }
-
-    &__data {
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-        position: relative;
-        color: $black-500;
-
-        &:not(:last-child) {
-            margin-right: 30px
-        }
-
-        &::before {
-            content: "";
-            position: absolute;
-            background-image: url('../images/calendar.svg');
-            height: 10px;
-            width: 5px;
-            left: -8px;
-            top: 4px;
-        }
     }
 }
 
 .silder-brands {
     display: flex;
     justify-content: space-between;
+    margin: 0 0 0 50px;
+    width: 100%;
 
     &__item {
-        max-height: 100px;
-    }
 
-    .slick-slide {
-        outline: transparent;
+        height: 100px;
+        display: flex !important;
+        align-items: center;
     }
 }

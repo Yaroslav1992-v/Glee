@@ -1,21 +1,27 @@
 .footer {
-    padding-top: 70px;
+    padding-top: 75px;
     font-size: 14px;
     color: $grey-200;
+
+    &__logo {
+        display: flex;
+        margin-bottom: 27px;
+    }
 
     &__top {
         display: flex;
         position: relative;
-        margin-bottom: 32px;
+        justify-content: space-between;
+        margin-bottom: 70px;
     }
 
     &__nav {
-        &:not(:last-child) {
-            padding: 15px;
+        &:not(:first-child) {
+            padding-left: 10px;
         }
 
         &:last-child {
-            padding: 20px 0 0 20px;
+            padding-left: 20px;
         }
 
         width: 25%;
@@ -23,15 +29,18 @@
 
     &__link {
         color: $grey-200;
+        font-size: 14px;
         border: 1px solid transparent;
         transition: color border-color ease 0.5s;
         @include actions-100
     }
 
     &__title {
-        @extend %dmsans-700;
+        @extend %dmsans;
+        font-size: 16px;
+        font-weight: 700;
         color: $black-300;
-        margin-bottom: 19px;
+        margin: 16px 0;
         text-transform: uppercase;
     }
 
@@ -41,11 +50,11 @@
 
     &__input {
         max-width: 170px;
-        margin-right: -2px;
+        margin-right: -5px;
         background-color: $white-200;
         border: 1px solid transparent;
         padding: 0 15px;
-        height: 40px;
+        height: 38px;
         outline: transparent;
 
         &:focus {
@@ -54,21 +63,25 @@
 
         &::placeholder {
             color: #234969;
+            font-size: 12px;
         }
     }
 
     &__btn {
+        @extend %dmsans;
+        height: 38px;
         color: $white;
+        font-size: 14px;
         background-color: $blue-grey;
-        padding: 8px 17px;
+        padding: 9px 17px;
         transition: background-color ease 0.5s;
-
-        &:hover {
-            background-color: $blue-dark;
-        }
 
         &:focus {
             background-color: $black-600;
+        }
+
+        &:hover {
+            background-color: $blue-dark;
         }
 
         &:active {
@@ -79,30 +92,72 @@
 
     &__text {
         max-width: 245px;
-        margin-bottom: 35px;
+        margin-bottom: 38px;
         line-height: 1.6;
         @include text-clamp;
     }
+
+    &__menu {
+        .menu {
+            &__item {
+                padding: 0 15px;
+
+                &:first-child {
+                    padding-left: 0;
+                }
+
+                &:last-child {
+                    padding-right: 0;
+                }
+
+                &:not(:last-child) {
+                    margin-right: 0;
+                    border-right: 1px solid $black-300;
+                }
+            }
+
+            &__link {
+                padding: 3px 0;
+                font-size: 14px;
+                border-bottom: 1px solid transparent;
+                color: $grey-100;
+                @include actions-100
+            }
+
+        }
+    }
 }
 
-.adress {
-    padding: 55px 0;
-    line-height: 1.4;
+.address {
     display: flex;
     flex-direction: column;
-    line-height: 1.4;
+    line-height: 1.6;
     font-style: normal;
 
     &__text {
         max-width: 190px;
 
         &:not(:last-child) {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
     }
 
     &__link {
         color: $grey-200;
+        border: 1px solid transparent;
+        transition: color, border-color, all 0.3s;
+
+        &:focus {
+            border-bottom-color: $blue-dark;
+        }
+
+        &:hover {
+            color: $blue-grey;
+        }
+
+        &:active {
+            border-bottom-color: $blue-grey;
+        }
     }
 }
 
@@ -110,36 +165,5 @@
     border-top: 1px solid $blue-grey;
     display: flex;
     justify-content: space-between;
-    padding: 30px 5px 30px 10px;
-}
-
-.footer__menu {
-    .menu {
-        &__item {
-            padding: 0 15px;
-
-            &:first-child {
-                padding-left: 0;
-            }
-
-            &:last-child {
-                padding-right: 0;
-            }
-
-            &:not(:last-child) {
-                margin-right: 0;
-                border-right: 1px solid $black-300;
-            }
-        }
-
-        &__link {
-            padding: 3px 0;
-            font-size: 14px;
-            border-bottom: 1px solid transparent;
-            color: $grey-100;
-            @extend %rubik-400;
-            @include actions-100
-        }
-
-    }
+    padding: 30px 0;
 }
