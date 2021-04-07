@@ -2,10 +2,22 @@
     background-image: linear-gradient(to bottom, transparent 50%, $white-200 50%);
     padding: 95px 0 85px;
 
+    @include r ($r-lg) {
+        padding: 65px 0;
+    }
+
+    @include r ($r-m) {
+        padding: 35px 0;
+    }
+
     &__inner {
         display: flex;
         justify-content: space-between;
         margin-bottom: 25px;
+
+        @include r ($r-m) {
+            flex-direction: column;
+        }
 
     }
 
@@ -20,6 +32,11 @@
         border-bottom: 1px solid transparent;
         transition: color ease 0.5s;
 
+        @include r ($r-m) {
+            padding-right: 20px;
+            justify-content: flex-end
+        }
+
         &:focus {
             border-color: $black-200;
         }
@@ -29,6 +46,10 @@
 
             &::after {
                 right: -10px;
+
+                @include r ($r-m) {
+                    right: -5px;
+                }
             }
         }
 
@@ -44,6 +65,10 @@
             font-size: 22px;
             top: 20px;
             transition: right ease 0.5s;
+
+            @include r ($r-m) {
+                top: -4px;
+            }
         }
     }
 
@@ -53,6 +78,14 @@
         justify-content: center;
         margin-right: -30px;
         margin-bottom: 55px;
+
+        @include r($r-xl) {
+            margin-right: 0;
+        }
+
+        @include r($r-m) {
+            margin-bottom: 25px;
+        }
     }
 
     &__item {
@@ -60,19 +93,9 @@
         width: 100%;
         margin-right: 30px;
         margin-bottom: 30px;
-    }
-}
 
-.silder-brands {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 0 0 50px;
-    width: 100%;
-
-    &__item {
-
-        height: 100px;
-        display: flex !important;
-        align-items: center;
+        @include r($r-m) {
+            margin-right: 0;
+        }
     }
 }

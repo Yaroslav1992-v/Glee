@@ -1,12 +1,45 @@
 .header {
     padding: 50px 0 45px;
 
+    @include r($r-xl) {
+        padding: 30px 0 15px;
+    }
+
+    @include r($r-m) {
+        padding: 0;
+        background-color: $white-300;
+    }
+
     &__inner {
-        position: relative;
+        &--fixed {
+            position: fixed;
+            z-index: 10;
+            top: 0;
+            left: 0;
+            padding: 5px 0;
+            right: 0;
+            background-color: $white-300;
+        }
+
+
+        @include r($r-m) {
+            background-color: $white-300;
+            padding: 10px 10px;
+        }
     }
 
     &__logo {
         margin-right: 155px;
+
+
+
+        @include r($r-xl) {
+            margin-right: 50px;
+        }
+
+        @include r($r-m) {
+            max-width: 100px;
+        }
     }
 
 }
@@ -14,14 +47,118 @@
 .menu {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1770px;
+    margin: auto;
+
+    @include r($r-m) {
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    &__open {
+        position: relative;
+        display: none;
+        width: 50px;
+        height: 6px;
+        border: none;
+        background-color: $blue-dark;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+        transition: all 0.5s ease-in-out;
+        cursor: pointer;
+        margin-right: 30px;
+
+        @include r($r-m) {
+            display: flex;
+        }
+
+        &:focus {
+            outline: transparent;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 6px;
+            left: 0;
+            background-color: $blue-dark;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+        }
+
+        &:before {
+            transform: translateY(-16px);
+        }
+
+        &:after {
+            transform: translateY(16px);
+        }
+
+        &--active {
+            transform: translateX(-50px);
+            background: transparent;
+            box-shadow: none;
+        }
+
+        &--active::before {
+            transform: rotate(45deg) translate(35px, -35px);
+        }
+
+        .menu__btn--active::after {
+            transform: rotate(-45deg) translate(35px, 35px);
+        }
+
+        &--active::after {
+            transform: rotate(-45deg) translate(35px, 35px);
+        }
+
+    }
 
     &__list {
         display: flex;
         padding: 5px;
+
+        @include r($r-xl) {
+            margin: 0 auto 15px;
+        }
+
+        @include r($r-m) {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 50px;
+            background-color: $white-300;
+            width: 100%;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 10;
+
+            &--active {
+                display: block;
+            }
+        }
+
+
     }
 
-    &__item:not(:last-child) {
-        margin-right: 35px;
+    &__item {
+        @include r($r-m) {
+            font-size: 24px;
+            padding: 5px;
+            border-bottom: 1px solid #334358;
+        }
+
+        &:not(:last-child) {
+            margin-right: 35px;
+
+            @include r($r-m) {
+
+                margin-right: 0;
+            }
+        }
     }
 
     &__link {
@@ -29,11 +166,27 @@
         font-size: 15px;
         transition: color ease 0.5s;
         @include actions;
+
+        @include r($r-m) {
+            font-size: 24px;
+            padding: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
     }
 
     &__nav {
         display: flex;
 
+        @include r($r-xl) {
+            margin: 0 auto;
+        }
+
+        @include r($r-m) {
+
+            width: 100%;
+            padding-top: 15px;
+        }
     }
 
     &__btn {
@@ -49,6 +202,10 @@
         &--search {
             background-color: $white-100;
             margin-right: 20px;
+
+            @include r($r-sm) {
+                margin-right: 5px;
+            }
         }
 
         &--box {
@@ -64,9 +221,18 @@
         align-items: flex-end;
         @include icon;
 
+        @include r($r-sm) {
+            padding: 16px 30px;
+        }
+
         &--cart {
             border-radius: 0 25px 25px 0;
             margin-right: 18px;
+
+            @include r($r-sm) {
+                margin-right: 5px;
+            }
+
         }
 
         &--heart {
@@ -88,6 +254,7 @@
                 }
             }
         }
+
     }
 
     &__num {
@@ -104,6 +271,10 @@
         position: absolute;
         top: 10px;
         right: 28px;
+
+        @include r($r-sm) {
+            right: 24px;
+        }
 
     }
 }

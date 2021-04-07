@@ -1,12 +1,20 @@
 .products {
     padding: 65px 0;
 
+    @include r($r-lg) {
+        padding: 30px;
+    }
+
     &__cards {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         margin-right: -30px;
-        margin-bottom: 50px
+        margin-bottom: 50px;
+
+        @include r($r-xl) {
+            margin-right: 0;
+        }
     }
 
     &__card {
@@ -14,6 +22,10 @@
         max-width: 270px;
         width: 100%;
         margin-right: 30px;
+
+        @include r($r-sm) {
+            margin-right: 0;
+        }
     }
 
     &__blocks {
@@ -26,8 +38,21 @@
         max-width: 870px;
         width: 100%;
 
+        @include r($r-lg) {
+            max-width: 670px;
+        }
+
+        @include r($r-m) {
+            max-width: 400px;
+        }
+
         &:nth-child(odd) {
             margin-right: 30px;
+
+            @include r($r-lg) {
+                margin-right: 0;
+            }
+
         }
 
     }

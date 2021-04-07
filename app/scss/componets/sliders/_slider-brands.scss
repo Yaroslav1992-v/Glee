@@ -1,0 +1,21 @@
+.silder-brands {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 0 50px;
+    width: 100%;
+
+    @include r($r-xl) {
+        margin-left: 0;
+    }
+
+    &__item {
+
+        height: 100px;
+        display: flex !important;
+        align-items: center;
+
+        @include r($r-xl) {
+            justify-content: center;
+        }
+    }
+}

@@ -7,11 +7,23 @@
         justify-content: center;
         margin-right: -30px;
         margin-bottom: 85px;
+
+        @include r($r-xl) {
+            margin-right: 0;
+        }
+
+        @include r($r-m) {
+            margin-bottom: 20px;
+        }
     }
 
     &__item {
         width: 370px;
         margin-right: 30px;
         margin-bottom: 35px;
+
+        @include r($r-sm) {
+            margin-right: 0;
+        }
     }
 }

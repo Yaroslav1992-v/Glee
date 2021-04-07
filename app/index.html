@@ -13,11 +13,15 @@
 <body>
     <header class="header">
         <div class="container container--big">
-            <div class="header__inner">
+            <div class="header__inner" id="header__inner">
                 <nav class="menu">
+                    <button class="menu__open" type="button">
+                        <span class="visually-hidden">Open Menu button</span>
+                    </button>
                     <a href="#" class="logo header__logo">
                         <img src="images/logo.png" alt="Logo Image">
                     </a>
+
                     <ul class="menu__list">
                         <li class="menu__item"><a href="#" class="menu__link">Home <span>+</span></a></li>
                         <li class="menu__item"><a href="#" class="menu__link">About</a></li>
@@ -62,7 +66,6 @@
     <main>
         <h1 class="visually-hidden">Glee: The Internet Shop</h1>
         <section class="slider-main ">
-            <h2 class="title visually-hidden">Our Product</h2>
             <div class="container container--big">
                 <div class="slider-main__inner">
                     <div class="container">
@@ -125,6 +128,7 @@
                         </ul>
                     </div>
                 </div>
+                <h2 class="title visually-hidden">Our Services</h2>
                 <ul class="service">
                     <li class="service__item">
                         <div class="service__content service__content--support">
@@ -161,19 +165,19 @@
                 <h2 class="title">Products of the week</h2>
                 <ul class="mix-nav">
                     <li class="mix-nav__item">
-                        <button type="button" data-filter="all" class="mix-nav__btn">All</button>
+                        <button class="mix-nav__btn" type="button" data-filter="all">All</button>
                     </li>
                     <li class="mix-nav__item">
-                        <button type="button" data-filter=".category-a" class="mix-nav__btn">Furnitures</button>
+                        <button class="mix-nav__btn" type="button" data-filter=".category-a">Furnitures</button>
                     </li>
                     <li class="mix-nav__item">
-                        <button type="button" data-filter=".category-b" class="mix-nav__btn">Chairs</button>
+                        <button class="mix-nav__btn" type="button" data-filter=".category-b">Chairs</button>
                     </li>
                     <li class="mix-nav__item">
-                        <button type="button" data-filter=".category-c" class="mix-nav__btn">Lighting</button>
+                        <button class="mix-nav__btn" type="button" data-filter=".category-c">Lighting</button>
                     </li>
                     <li class="mix-nav__item">
-                        <button type="button" data-filter=".category-d" class="mix-nav__btn">Deco</button>
+                        <button class="mix-nav__btn" type="button" data-filter=".category-d">Deco</button>
                     </li>
                 </ul>
                 <ul class="products__cards">
@@ -432,6 +436,7 @@
                     </li>
                 </ul>
             </div>
+
             <div class="container container--big">
                 <ul class="products__blocks">
                     <li class="products__item">
@@ -440,7 +445,7 @@
                                 <img src="images/products/block-1.png" alt="Product image">
                             </div>
                             <div class="product-block__content">
-                                <h4 class="product-block__name">Mirum Notare Tellus</h4>
+                                <h3 class="product-block__name">Mirum Notare Tellus</h3>
                                 <div class="product-block__description">
                                     <p>LEDCornBulb Lamp 5W 7W 10W 12W 15W E26
                                         E27LEDCornLight
@@ -460,7 +465,7 @@
                                 <img src="images/products/block-2.png" alt="Product image">
                             </div>
                             <div class="product-block__content">
-                                <h4 class="product-block__name">Malesuada Tempor Euismod</h4>
+                                <h3 class="product-block__name">Malesuada Tempor Euismod</h3>
                                 <div class="product-block__description">
                                     <p>50W 8000lm Compact Size for HID StreetLightReplacementLEDCornLi
                                     </p>
@@ -482,31 +487,31 @@
                 <h2 class="title">New Design</h2>
                 <ul class="mix-nav">
                     <li class="mix-nav__item">
-                        <button type="button" data-filter="all" class="mix-nav__btn">All</button>
+                        <button class="mix-nav__btn" type="button" data-filter="all">All</button>
                     </li>
                     <li class="mix-nav__item">
-                        <button type="button" data-filter=".category-1" class="mix-nav__btn">Furnitures</button>
+                        <button class="mix-nav__btn" type="button" data-filter=".category-1">Furnitures</button>
                     </li>
                     <li class="mix-nav__item">
-                        <button type="button" data-filter=".category-2" class="mix-nav__btn">Chairs</button>
+                        <button class="mix-nav__btn" type="button" data-filter=".category-2">Chairs</button>
                     </li>
                     <li class="mix-nav__item">
-                        <button type="button" data-filter=".category-3" class="mix-nav__btn">Lighting</button>
+                        <button class="mix-nav__btn" type="button" data-filter=".category-3">Lighting</button>
                     </li>
                     <li class="mix-nav__item">
-                        <button type="button" data-filter=".category-4" class="mix-nav__btn">Deco</button>
+                        <button class="mix-nav__btn" type="button" data-filter=".category-4">Deco</button>
                     </li>
                 </ul>
                 <ul class="design__cards">
                     <li class="design__item mix category-a">
                         <article class="design-card">
                             <div class="design-card__content">
-                                <div class="design-card__img">
+                                <a class="design-card__img" href="#">
                                     <img src="images/design/1.png" alt="design images">
-                                </div>
-                                <h3 class="design-card__name">Beat Flat Pendant Black
-
-                                </h3>
+                                </a>
+                                <a class="design-card__link" href="#">
+                                    <h3 class="design-card__name">Beat Flat Pendant Black</h3>
+                                </a>
                                 <span class="design-card__style">Classic</span>
                             </div>
                         </article>
@@ -514,12 +519,12 @@
                     <li class="design__item mix category-1">
                         <article class="design-card">
                             <div class="design-card__content">
-                                <div class="design-card__img">
+                                <a class="design-card__img" href="#">
                                     <img src="images/design/2.png" alt="design images">
-                                </div>
-                                <h3 class="design-card__name">Lampe Sur Pieds Bamboo
-
-                                </h3>
+                                </a>
+                                <a class="design-card__link" href="#">
+                                    <h3 class="design-card__name">Lampe Sur Pieds Bamboo </h3>
+                                </a>
                                 <span class="design-card__style">Classic</span>
                             </div>
                         </article>
@@ -528,12 +533,12 @@
                         <article class="design-card">
 
                             <div class="design-card__content">
-                                <div class="design-card__img">
+                                <a class="design-card__img" href="#">
                                     <img src="images/design/3.png" alt="design images">
-                                </div>
-                                <h3 class="design-card__name">Rattan Rocking Chair
-
-                                </h3>
+                                </a>
+                                <a class="design-card__link" href="#">
+                                    <h3 class="design-card__name">Rattan Rocking Chair</h3>
+                                </a>
                                 <span class="design-card__style">Classic</span>
                             </div>
                         </article>
@@ -542,12 +547,12 @@
                         <article class="design-card">
 
                             <div class="design-card__content">
-                                <div class="design-card__img">
+                                <div class="design-card__img" href="#">
                                     <img src="images/design/4.png" alt="design images">
                                 </div>
-                                <h3 class="design-card__name">Rattan Rocking Chair
-
-                                </h3>
+                                <a class="design-card__link" href="#">
+                                    <h3 class="design-card__name">Rattan Rocking Chair</h3>
+                                </a>
                                 <span class="design-card__style">Classic</span>
                             </div>
                         </article>
@@ -556,12 +561,12 @@
                         <article class="design-card">
 
                             <div class="design-card__content">
-                                <div class="design-card__img">
+                                <a class="design-card__img" href="#">
                                     <img src="images/design/5.png" alt="design images">
-                                </div>
-                                <h3 class="design-card__name">Rattan Rocking Chair
-
-                                </h3>
+                                </a>
+                                <a class="design-card__link" href="#">
+                                    <h3 class="design-card__name">Rattan Rocking Chair</h3>
+                                </a>
                                 <span class="design-card__style">Classic</span>
                             </div>
                         </article>
@@ -569,18 +574,20 @@
                     <li class="design__item mix category-1 ">
                         <article class="design-card">
                             <div class="design-card__content">
-                                <div class="design-card__img">
+                                <a class="design-card__img" href="#">
                                     <img src="images/design/6.png" alt="design images">
-                                </div>
-                                <h3 class="design-card__name">Lampe Sur Pieds Bamboo
-
-                                </h3>
+                                </a>
+                                <a class="design-card__link" href="#">
+                                    <h3 class="design-card__name">Lampe Sur Pieds Bamboo</h3>
+                                </a>
                                 <span class="design-card__style">Classic</span>
                             </div>
                         </article>
                     </li>
                 </ul>
             </div>
+
+
             <div class="video">
                 <a class="video__popup" style="background-image:url(images/video-bg.jpg);" data-fancybox
                     href="https://youtu.be/iywaBOMvYLI">
@@ -591,6 +598,7 @@
                 </a>
             </div>
         </section>
+
         <section class="articles">
             <div class="container">
                 <div class="articles__inner">
@@ -610,8 +618,8 @@
                                     venim
                                 </h3>
                                 <div class="news-card__info">
-                                    <time class="news-card__data"> 28 JANUARY.2020</time>
-                                    <span class="news-card__data">BY ADMIN</span>
+                                    <time class="news-card__data news-card__data--date"> 28 january.2020</time>
+                                    <span class="news-card__data news-card__data--author">by admin</span>
                                 </div>
                             </div>
                         </article>
@@ -627,8 +635,8 @@
                                 <h3 class="news-card__title">Aonsectetur adipisicing elit,sed do
                                     eiusmod tempor incididunt ut labore et dolore</h3>
                                 <div class="news-card__info">
-                                    <time class="news-card__data"> 28 JANUARY.2020</time>
-                                    <span class="news-card__data">BY ADMIN</span>
+                                    <time class="news-card__data news-card__data--date"> 28 january.2020</time>
+                                    <span class="news-card__data news-card__data--author">by admin</span>
                                 </div>
                             </div>
                         </article>
@@ -643,14 +651,15 @@
                                 <h3 class="news-card__title">Rncididunt ut labore et dolore magna aliqua. Ut enim
                                 </h3>
                                 <div class="news-card__info">
-                                    <time class="news-card__data"> 28 JANUARY.2020</time>
-                                    <span class="news-card__data">BY ADMIN</span>
+                                    <time class="news-card__data news-card__data--date"> 28 january.2020</time>
+                                    <span class="news-card__data news-card__data--author">by admin</span>
                                 </div>
                             </div>
                         </article>
                     </li>
 
                 </ul>
+
 
                 <ul class="silder-brands">
                     <li class="silder-brands__item">
@@ -688,7 +697,9 @@
             </div>
 
         </section>
+
     </main>
+
     <footer class="footer">
         <div class="container">
             <div class="footer__top">

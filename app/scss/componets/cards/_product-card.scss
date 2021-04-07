@@ -19,6 +19,11 @@
         height: 295px;
         display: flex;
         align-items: center;
+
+        img {
+            height: 100%;
+            object-fit: scale-down;
+        }
     }
 
 

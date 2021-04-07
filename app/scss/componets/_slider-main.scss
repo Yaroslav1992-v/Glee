@@ -1,12 +1,17 @@
 .slider-main {
     &__inner {
-        padding: 215px 0 100px;
+        padding: 215px 0 44px;
         background-color: $orange;
-    }
-
-    &__list {
         position: relative;
         z-index: 2;
+
+        @include r($r-xl) {
+            padding: 115px 0 30px;
+        }
+
+        @include r($r-lg) {
+            padding: 55px 0 15px;
+        }
 
         &::after {
             content: "";
@@ -15,17 +20,53 @@
             border-radius: 50%;
             height: 59vh;
             width: 59vh;
-            right: -121px;
-            top: -114px;
+            right: 183px;
+            top: 99px;
             z-index: -1;
+            overflow: hidden;
+
+            @include r($r-xl) {
+                background-image: none;
+
+            }
         }
     }
+
+
+    &__list {}
 
     &__item {
         display: flex !important;
         justify-content: space-between;
-        margin-bottom: 200px;
+        margin-bottom: 210px;
         position: relative;
+
+        @include r($r-xl) {
+            margin-bottom: 100px;
+        }
+
+        @include r($r-lg) {
+            margin-bottom: 50px;
+        }
+
+        @include r($r-m) {
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+    }
+
+    &__box {
+        max-width: 80%;
+
+        @include r($r-xl) {
+            margin-right: 30px;
+        }
+
+        @include r($r-m) {
+            margin-bottom: 25px;
+            margin-right: 0;
+        }
     }
 
     &__name {
@@ -38,6 +79,26 @@
         color: $black-600;
         margin-bottom: 25px;
         max-width: 500px;
+
+        @include r($r-xl) {
+            font-size: 60px;
+        }
+
+        @include r($r-lg) {
+            font-size: 50px;
+        }
+
+        @include r($r-m) {
+            font-size: 40px;
+        }
+
+        @include r($r-sm) {
+            font-size: 30px;
+        }
+
+        @include r($r-m) {
+            max-width: 100%;
+        }
     }
 
     &__content {
@@ -47,14 +108,15 @@
         color: $blue-dark;
         line-height: 1.6;
         margin-bottom: 55px;
-
-        p {
-            @include text-clamp;
-            text-overflow: ellipsis;
-        }
+        @include text-clamp;
+        -webkit-line-clamp: 5;
     }
 
     &__link {
+        @include r($r-m) {
+            padding-right: 60px;
+        }
+
         background-color: $blue-grey;
         color: $white;
 
@@ -72,17 +134,27 @@
     }
 
     &__img {
-        max-height: 260px;
-        padding: 15px 0;
-        align-self: flex-end;
-        object-fit: contain;
+        max-width: 650px;
+        height: 320px;
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+
+        @include r($r-lg) {
+            align-self: center;
+            max-width: 450px;
+            align-items: center;
+        }
+
+        @include r($r-m) {
+            max-width: 380px;
+            height: 220px;
+        }
     }
 
     .slick-dots {
         display: flex;
-        position: absolute;
-        left: 50%;
-        bottom: -55px;
+        justify-content: center;
 
         li {
             opacity: 0.3;
@@ -117,7 +189,11 @@
 .service {
     display: flex;
     justify-content: center;
-    background-color: $white-200;
+
+
+    @include r($r-m) {
+        display: block;
+    }
 
     &__item {
         display: flex;
@@ -126,13 +202,35 @@
         max-width: 600px;
         width: 100%;
         line-height: 1.8;
+        background-color: $white-200;
 
         &:first-child {
             max-width: 565px;
+
+            @include r($r-lg) {
+                max-width: 400px;
+            }
         }
 
         &:not(:last-child) {
             border-right: 1px solid #e8e4df;
+
+            @include r($r-m) {
+                border-right: none;
+                border: 1px solid #e8e4df;
+            }
+        }
+
+        @include r($r-lg) {
+            padding: 55px 20px 20px 20px;
+            max-width: 400px;
+
+        }
+
+        @include r($r-m) {
+            border: 1px solid #e8e4df;
+            margin: 30px auto;
+            box-shadow: 0 6px 47px 3px rgba(00, 00, 00, 0.4);
         }
     }
 
@@ -141,6 +239,10 @@
 
         &--delivery {
             padding-top: 10px;
+
+            @include r($r-lg) {
+                padding-top: 0;
+            }
         }
 
         &::before {
@@ -151,6 +253,11 @@
             width: 50px;
             left: -75px;
             top: 5px;
+
+            @include r($r-lg) {
+                left: 0;
+                top: -46px;
+            }
         }
 
         &--support::before {
@@ -163,12 +270,21 @@
             height: 35px;
             left: -80px;
             top: 16px;
+
+            @include r($r-lg) {
+                left: 0;
+                top: -30px;
+            }
         }
 
         &--payment::before {
             background-image: url('../images/payment.svg');
             height: 45px;
             left: -85px;
+
+            @include r($r-lg) {
+                left: 0;
+            }
         }
     }
 

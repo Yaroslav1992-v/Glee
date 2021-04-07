@@ -14,9 +14,13 @@
     }
 
     &__img {
+        display: -webkit-box;
         height: 250px;
-        display: flex;
-        justify-content: center;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
     }
 
     &__link {
@@ -73,6 +77,7 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         color: $black-500;
+        text-transform: uppercase;
 
         &:not(:last-child) {
             margin-right: 37px
@@ -81,12 +86,19 @@
         &::before {
             content: "";
             position: absolute;
-            background-image: url('../images/sprite.svg#calendar');
             height: 12px;
-            width: 8px;
-            left: -12px;
+            width: 12px;
+            left: -16px;
             top: 4px;
             background-size: cover;
+        }
+
+        &--date::before {
+            background-image: url('../images/sprite.svg#calendar');
+        }
+
+        &--author::before {
+            background-image: url('../images/sprite.svg#user');
         }
     }
 }

@@ -9,8 +9,9 @@
 @import 'componets/_products.scss';
 @import 'componets/_design.scss';
 @import 'componets/_articles.scss';
-@import 'componets/_product-card.scss';
-@import 'componets/_product-block.scss';
-@import 'componets/_design-card.scss';
-@import 'componets/_news-card.scss';
-@import 'componets/_video.scss';
+@import 'componets/cards/_product-block.scss';
+@import 'componets/cards/_design-card.scss';
+@import 'componets/cards/_product-card.scss';
+@import 'componets/cards/_news-card.scss';
+@import 'componets/sliders/slider-brands.scss';
+@import 'componets/cards/_video.scss';

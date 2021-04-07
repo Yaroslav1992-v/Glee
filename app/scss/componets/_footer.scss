@@ -3,6 +3,12 @@
     font-size: 14px;
     color: $grey-200;
 
+    @include r($r-m) {
+        background-color: $white-300;
+        font-size: 18px;
+        padding-top: 30px;
+    }
+
     &__logo {
         display: flex;
         margin-bottom: 27px;
@@ -13,18 +19,63 @@
         position: relative;
         justify-content: space-between;
         margin-bottom: 70px;
+
+        @include r($r-lg) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+
+        @include r($r-m) {
+            margin-bottom: 0;
+        }
     }
 
     &__nav {
         &:not(:first-child) {
             padding-left: 10px;
+
+            @include r($r-lg) {
+                padding-left: 0;
+            }
+
+            @include r($r-sm) {
+                max-width: 50%;
+            }
         }
 
         &:last-child {
             padding-left: 20px;
+
+            @include r($r-lg) {
+                padding-left: 0;
+            }
+
+            @include r($r-sm) {
+                max-width: 100%;
+            }
         }
 
         width: 25%;
+
+        @include r($r-xl) {
+            width: auto;
+        }
+
+        @include r($r-lg) {
+            width: 40%;
+            margin-bottom: 30px;
+        }
+
+        @include r($r-m) {
+            max-width: 260px;
+            width: 100%;
+
+        }
+
+        @include r($r-sm) {
+            max-width: 100%;
+        }
     }
 
     &__link {
@@ -56,6 +107,10 @@
         padding: 0 15px;
         height: 38px;
         outline: transparent;
+
+        @include r($r-lg) {
+            width: 150px;
+        }
 
         &:focus {
             border-color: $blue-grey;
@@ -114,6 +169,10 @@
                     margin-right: 0;
                     border-right: 1px solid $black-300;
                 }
+
+                @include r($r-m) {
+                    border-bottom: none;
+                }
             }
 
             &__link {
@@ -121,7 +180,8 @@
                 font-size: 14px;
                 border-bottom: 1px solid transparent;
                 color: $grey-100;
-                @include actions-100
+                @include actions-100;
+
             }
 
         }
@@ -136,6 +196,10 @@
 
     &__text {
         max-width: 190px;
+
+        @include r($r-sm) {
+            max-width: 100%;
+        }
 
         &:not(:last-child) {
             margin-bottom: 12px;
@@ -166,4 +230,15 @@
     display: flex;
     justify-content: space-between;
     padding: 30px 0;
+
+    @include r($r-m) {
+        padding: 15px 0;
+        flex-wrap: wrap;
+    }
+
+    &__text {
+        @include r($r-m) {
+            margin-bottom: 20px;
+        }
+    }
 }

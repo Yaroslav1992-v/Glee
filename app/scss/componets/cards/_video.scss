@@ -24,6 +24,18 @@
         z-index: 2;
         position: relative;
 
+        @include r($r-xl) {
+            height: 500px;
+        }
+
+        @include r($r-lg) {
+            height: 400px;
+        }
+
+        @include r($r-m) {
+            display: none;
+        }
+
         &:hover {
             opacity: 0.7;
 
