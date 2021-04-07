@@ -83,7 +83,11 @@
         font-size: 14px;
         border: 1px solid transparent;
         transition: color border-color ease 0.5s;
-        @include actions-100
+        @include actions-100;
+
+        @include r($r-m) {
+            font-size: 18px;
+        }
     }
 
     &__title {
