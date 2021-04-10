@@ -52,6 +52,11 @@
         display: flex;
         opacity: 0;
         transition: opacity ease 0.8s;
+
+        @include r ($r-lg) {
+            opacity: 1;
+            top: 60%;
+        }
     }
 
     &__icon {

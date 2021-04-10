@@ -1,0 +1,38 @@
+.page {
+    background-color: $white-100;
+    text-align: center;
+    padding: 20px 0 30px;
+    line-height: 1.4;
+
+    &__title {
+        @extend %rubik;
+        font-weight: 300;
+        font-size: 36px;
+
+        color: $black-400;
+    }
+
+    &__links {
+        span {
+            margin: 0 5px;
+        }
+    }
+
+    &__link {
+        color: $black-400;
+        font-size: 14px;
+        transition: color, all 0.3s;
+
+        &:focus {
+            color: $grey-200;
+        }
+
+        &:hover {
+            color: $blue-grey;
+        }
+
+        &--on {
+            font-weight: 500;
+        }
+    }
+}

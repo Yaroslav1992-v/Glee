@@ -1,40 +1,51 @@
 .header {
-    padding: 50px 0 45px;
+    padding: 50px 0 95px;
 
-    @include r($r-xl) {
-        padding: 30px 0 15px;
-    }
-
-    @include r($r-m) {
-        padding: 0;
+    @include r($r-lg) {
+        padding: 20px 0 60px;
         background-color: $white-300;
     }
 
     &__inner {
+        position: absolute;
+        left: 0;
+        right: 0;
+        transition: all ease 0.5s;
+        padding: 0 10px;
+
         &--fixed {
             position: fixed;
             z-index: 10;
             top: 0;
-            left: 0;
-            padding: 5px 0;
+            padding: 10px 10px;
             right: 0;
             background-color: $white-300;
+            box-shadow: 0 6px 47px 3px rgba(37, 37, 37, 0.3);
+
+            .menu {
+                align-items: center;
+            }
         }
 
+        @include r($r-lg) {
+            padding: 10px 10px;
+        }
 
         @include r($r-m) {
             background-color: $white-300;
-            padding: 10px 10px;
         }
     }
 
     &__logo {
         margin-right: 155px;
 
-
-
         @include r($r-xl) {
-            margin-right: 50px;
+            margin-right: 20px;
+        }
+
+        @include r($r-lg) {
+            margin-right: auto;
+
         }
 
         @include r($r-m) {
@@ -51,25 +62,23 @@
     max-width: 1770px;
     margin: auto;
 
-    @include r($r-m) {
-        align-items: center;
+    @include r($r-lg) {
         justify-content: flex-start;
     }
 
     &__open {
         position: relative;
         display: none;
-        width: 50px;
-        height: 6px;
+        width: 40px;
+        height: 4px;
         border: none;
         background-color: $blue-dark;
         border-radius: 5px;
         box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
         transition: all 0.5s ease-in-out;
         cursor: pointer;
-        margin-right: 30px;
 
-        @include r($r-m) {
+        @include r($r-lg) {
             display: flex;
         }
 
@@ -81,8 +90,8 @@
         &::after {
             content: "";
             position: absolute;
-            width: 50px;
-            height: 6px;
+            width: 40px;
+            height: 4px;
             left: 0;
             background-color: $blue-dark;
             border-radius: 5px;
@@ -90,11 +99,11 @@
         }
 
         &:before {
-            transform: translateY(-16px);
+            transform: translateY(-12px);
         }
 
         &:after {
-            transform: translateY(16px);
+            transform: translateY(12px);
         }
 
         &--active {
@@ -122,14 +131,15 @@
         padding: 5px;
 
         @include r($r-xl) {
-            margin: 0 auto 15px;
+            align-items: center;
+            margin: 0 auto;
         }
 
-        @include r($r-m) {
+        @include r($r-lg) {
             display: none;
             position: absolute;
             left: 0;
-            top: 50px;
+            top: 105px;
             background-color: $white-300;
             width: 100%;
             height: 100vh;
@@ -145,7 +155,7 @@
     }
 
     &__item {
-        @include r($r-m) {
+        @include r($r-lg) {
             font-size: 24px;
             padding: 5px;
             border-bottom: 1px solid #334358;
@@ -154,7 +164,7 @@
         &:not(:last-child) {
             margin-right: 35px;
 
-            @include r($r-m) {
+            @include r($r-lg) {
 
                 margin-right: 0;
             }
@@ -167,7 +177,7 @@
         transition: color ease 0.5s;
         @include actions;
 
-        @include r($r-m) {
+        @include r($r-lg) {
             font-size: 24px;
             padding: 5px;
             display: flex;
@@ -177,15 +187,26 @@
 
     &__nav {
         display: flex;
+        z-index: 10;
 
         @include r($r-xl) {
             margin: 0 auto;
         }
 
-        @include r($r-m) {
-
+        @include r($r-lg) {
+            display: none;
+            padding: 5px 10px;
             width: 100%;
+            border-bottom: 1px solid #334358;
+            background-color: $white-300;
+        }
+
+        @include r($r-m) {
             padding-top: 15px;
+        }
+
+        &--active {
+            display: flex;
         }
     }
 
@@ -203,13 +224,21 @@
             background-color: $white-100;
             margin-right: 20px;
 
-            @include r($r-sm) {
-                margin-right: 5px;
+            @include r($r-xl) {
+                margin-right: 10px;
+            }
+
+            @include r($r-lg) {
+                margin-right: auto;
             }
         }
 
         &--box {
             background-color: $blue-grey;
+
+            @include r($r-lg) {
+                margin-left: auto;
+            }
         }
     }
 
@@ -229,8 +258,12 @@
             border-radius: 0 25px 25px 0;
             margin-right: 18px;
 
-            @include r($r-sm) {
-                margin-right: 5px;
+            @include r($r-xl) {
+                margin-right: 10px;
+            }
+
+            @include r($r-lg) {
+                margin-right: 0;
             }
 
         }

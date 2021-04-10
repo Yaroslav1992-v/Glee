@@ -1,0 +1,305 @@
+.about {
+    padding: 125px 0;
+
+    @include r ($r-lg) {
+        padding: 65px 0;
+    }
+
+    @include r ($r-lg) {
+        padding: 0 0 30px;
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 120px;
+
+        @include r ($r-xl) {
+            margin-bottom: 80px;
+        }
+
+        @include r ($r-m) {
+            margin-bottom: 50px;
+        }
+
+        @include r ($r-sm) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__img {
+        max-height: 675px;
+        overflow: hidden;
+
+        @include r ($r-lg) {
+            display: none;
+        }
+
+        img {
+            object-fit: cover;
+        }
+    }
+
+    &__container {
+        max-width: 600px;
+        padding: 43px 0 45px 48px;
+
+        @include r ($r-lg) {
+            padding: 25px 0 25px 25px;
+        }
+
+        @include r ($r-m) {
+            padding: 25px 0 15px 10px;
+        }
+    }
+
+    &__title {
+        text-align: left;
+        margin-bottom: 25px;
+    }
+
+    &__experience {
+        vertical-align: text-bottom;
+        display: inline-flex;
+        max-width: 125px;
+        color: $black-600;
+        line-height: 1.9;
+        max-height: 190px;
+        overflow: hidden;
+
+        @include r($r-lg) {
+            line-height: 1.6;
+        }
+    }
+
+    &__num {
+        margin-right: 30px;
+        font-weight: 700;
+        font-size: 140px;
+        line-height: 1.3;
+        color: $blue-grey;
+
+        @include r($r-lg) {
+            font-size: 120px;
+            margin-right: 15px;
+        }
+
+    }
+
+    &__content {
+        margin-bottom: 65px;
+        line-height: 1.8;
+        @include text-clamp;
+        -webkit-line-clamp: 10;
+
+        @include r($r-lg) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__achievements {
+        border-top: 2px solid $white-100;
+        display: flex;
+        padding: 20px 0;
+    }
+
+    &__item {
+        padding: 10px 25px 20px 55px;
+        @extend %dmsans;
+        font-weight: 700;
+        color: #4c4c4c;
+        position: relative;
+
+        @include r($r-lg) {
+            padding: 10px 15px 20px 25px;
+        }
+
+        @include r($r-m) {
+            padding: 30px 15px 20px 25px;
+        }
+
+        @include r($r-sm) {
+            padding: 30px 10px 20px 10px;
+        }
+
+        &:not(:last-child) {
+            border-right: 1px solid $white-100;
+            margin-right: 30px;
+
+            @include r($r-m) {
+                margin-right: 0;
+            }
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 17px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 40px;
+            width: 40px;
+            left: -3px;
+            top: 25px;
+
+            @include r($r-lg) {
+                left: -30px;
+                top: 14px;
+            }
+
+            @include r($r-m) {
+                left: 25px;
+                top: -8px;
+            }
+        }
+
+        &--project::before {
+            background-image: url('../images/sprite.svg#project');
+        }
+
+        &--revnue::before {
+            background-image: url('../images/sprite.svg#revnue');
+        }
+
+        &--award::before {
+            background-image: url('../images/sprite.svg#award');
+        }
+
+    }
+
+    &__number {
+        line-height: 1.1;
+        font-size: 36px;
+        color: $black-600;
+
+        @include r($r-lg) {
+            font-size: 30px;
+        }
+    }
+
+}
+
+.benefits {
+    background-color: $orange;
+    padding: 90px 0 75px;
+    overflow: hidden;
+
+    @include r($r-lg) {
+        padding: 20px 0 20px;
+    }
+
+    @include r($r-sm) {
+        padding: 0 0 20px;
+    }
+
+    &__list {
+        @extend %dmsans;
+        font-weight: 700;
+        display: flex;
+        text-align: center;
+        align-items: flex-end;
+        height: 150px;
+
+        @include r($r-lg) {
+            height: auto;
+            align-items: baseline;
+        }
+
+        @include r($r-sm) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__item {
+        font-size: 18px;
+        max-width: 300px;
+        width: 100%;
+        word-break: break-word;
+        padding-top: 75px;
+        @include text-clamp;
+        -webkit-line-clamp: 5;
+
+        &:not(:last-child) {
+            margin-right: 40px;
+
+            @include r($r-lg) {
+                margin-right: 15px;
+
+                @include r($r-sm) {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        @include r($r-sm) {
+            max-width: 100%;
+            width: 50%;
+        }
+
+        @include r($r-m) {
+            font-size: 16px;
+        }
+    }
+
+    &__number {
+        display: block;
+        font-size: 36px;
+        margin-bottom: 5px;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            height: 64px;
+            width: 64px;
+            background-size: contain;
+            top: -72px;
+            left: 91px;
+            background-repeat: no-repeat;
+
+            @include r($r-xl) {
+                left: auto;
+            }
+
+            @include r($r-sm) {
+                top: -47px;
+            }
+        }
+
+        &--satisfy::before {
+            background-image: url('../images/sprite.svg#graph');
+        }
+
+        &--delivery::before {
+            background-image: url('../images/sprite.svg#truck');
+        }
+
+        &--time::before {
+            background-image: url('../images/sprite.svg#work');
+        }
+
+        &--brands::before {
+            background-image: url('../images/sprite.svg#trophy');
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: 34px;
+            width: 34px;
+            left: 127px;
+            top: -48px;
+            opacity: 0.6;
+            border-radius: 50%;
+            background-color: $blue-grey;
+
+            @include r($r-xl) {
+                left: 50%;
+            }
+        }
+
+        @include r($r-lg) {
+            font-size: 30px;
+        }
+    }
+}

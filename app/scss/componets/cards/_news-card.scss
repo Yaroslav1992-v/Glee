@@ -27,7 +27,8 @@
         max-width: 200px;
         white-space: nowrap;
         overflow: hidden;
-        @extend %poppins-700;
+        @extend %poppins;
+        font-weight: 700;
         font-size: 14px;
         color: $white;
         padding: 5px 31px;
