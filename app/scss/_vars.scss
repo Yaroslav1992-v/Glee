@@ -91,6 +91,19 @@ $r-sm:548;
 
 }
 
+@mixin cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -30px;
+    justify-content: center;
+}
+
+@mixin card-item {
+    max-width: 370px;
+    width: 100%;
+    margin-right: 30px;
+}
+
 @mixin text-clamp($lines: 3, $line-height: false) {
     overflow: hidden;
     display: -webkit-box;

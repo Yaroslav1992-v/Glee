@@ -13,8 +13,12 @@
 @import 'componets/cards/_design-card.scss';
 @import 'componets/cards/_product-card.scss';
 @import 'componets/cards/_news-card.scss';
-@import 'componets/sliders/slider-brands.scss';
+@import 'componets/sliders/_slider-brands.scss';
 @import 'componets/cards/_video.scss';
 @import 'pages/_page.scss';
 @import 'pages/_about.scss';
 @import 'pages/_team.scss';
+@import 'pages/_product-list.scss';
+@import 'componets/parts/_pagination.scss';
+@import 'componets/parts/_filter.scss';
+@import 'componets/parts/_resent.scss';

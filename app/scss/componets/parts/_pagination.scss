@@ -1,0 +1,43 @@
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+        margin-bottom: 15px;
+        position: relative;
+
+        &:not(:last-child) {
+            margin-right: 15px;
+        }
+    }
+
+    &__page {
+        border: 1px solid $blue-grey;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $black-600;
+        transition: border-color, background-color, color ease 0.5s;
+
+        &:focus {
+            border-color: $black-600;
+        }
+
+        &:hover {
+            background-color: $blue-grey;
+            color: $white-200;
+        }
+
+        &--on {
+            color: $white;
+            background-color: $blue-grey;
+            //это вместо актив
+        }
+
+        &--next {
+            width: 70px;
+        }
+    }
+}

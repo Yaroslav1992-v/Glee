@@ -1,0 +1,263 @@
+.product-list {
+
+
+    &__inner {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 115px 0;
+
+        @include r($r-xl) {
+            padding: 80px 0;
+        }
+
+        @include r($r-lg) {
+            padding: 60px 0;
+        }
+
+        @include r($r-m) {
+            padding: 30px 0;
+        }
+    }
+
+    &__filters {
+        max-width: 270px;
+        width: 100%;
+        margin-right: 30px;
+
+        @include r($r-lg) {
+            position: absolute;
+            left: -20px;
+            z-index: 21;
+            padding: 20px;
+            transform: translateX(-150%);
+            background-color: $white-100;
+            border-radius: 0 65px 65px 0;
+
+            transition: transform ease 0.5s;
+
+            &--active {
+                transform: translateX(0);
+                box-shadow: 0 10px 47px 10px rgba(37, 37, 37, 0.08);
+
+            }
+        }
+    }
+
+    &__filter {
+        position: relative;
+
+        &:not(:last-child) {
+            margin-bottom: 55px;
+        }
+    }
+
+    &__button {
+        position: absolute;
+        right: 15px;
+        top: 19px;
+        z-index: 30;
+    }
+
+    &__close {
+        display: none;
+
+        @include r($r-lg) {
+            &--active {
+                display: block;
+            }
+        }
+    }
+
+    &__container {
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include r($r-sm) {
+            margin-bottom: 0;
+        }
+
+        &--list {
+
+            align-items: flex-start;
+
+            .product-list {
+
+                &__item {
+                    max-width: 870px;
+                    width: 100%;
+                    margin-right: 0;
+
+                    @include r($r-sm) {
+                        max-width: 100%;
+                    }
+
+                    &:not(:nth-child(-n+4)) {
+                        display: none;
+                    }
+                }
+
+                &__cards {
+                    max-width: 100%;
+                    justify-content: flex-start;
+                }
+            }
+        }
+    }
+
+    &__nav {
+        padding: 15px 10px;
+        display: flex;
+        justify-content: space-between;
+        border: 2px solid #f2f2f2;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+        width: 100%;
+
+        @include r($r-sm) {
+            justify-content: center;
+        }
+    }
+
+    &__switch {
+        display: flex;
+        align-items: center;
+    }
+
+    &__filterback {
+        font-size: 20px;
+        align-self: baseline;
+        display: none;
+        background-color: transparent;
+        color: $black-600;
+        padding: 5px;
+        border-radius: 15px;
+        border: 1px solid $blue-grey;
+
+        // подумал что этой кнопке не нужны эффекты так ко она появляется на мобильных устройствах  и после нажатия скрыта  фильтрами 
+        @include r($r-lg) {
+            display: flex;
+        }
+    }
+
+    &__svg {
+        transition: fill ease 0.5s;
+    }
+
+    &__btn {
+        outline: transparent;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        margin-right: 15px;
+        cursor: pointer;
+        display: flex;
+
+        &:focus {
+
+            .product-list__svg {
+                fill: $blue-grey;
+            }
+        }
+
+        &:hover {
+
+            .product-list__svg {
+                fill: $orange;
+
+            }
+        }
+
+        &--active {
+
+            .product-list__svg {
+                fill: $blue-dark;
+
+            }
+        }
+
+    }
+
+    &__cards {
+        @include cards;
+        padding-top: 5px;
+        margin-bottom: 70px;
+
+        @include r($r-xl) {
+            margin-right: 0;
+        }
+
+        @include r($r-lg) {
+            margin-bottom: 20px;
+        }
+
+    }
+
+    &__item {
+        margin-bottom: 40px;
+        max-width: 270px;
+        @include card-item;
+        max-width: 270px;
+
+        @include r($r-sm) {
+            margin-right: 0;
+        }
+
+    }
+
+    .jq-selectbox__select {
+        height: 45px;
+        padding: 0 15px 0 15px;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        text-shadow: none;
+        box-shadow: none;
+        font-size: 16px;
+        color: $black-600;
+        @extend %dmsans;
+        font-weight: 500;
+        cursor: pointer;
+
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    .jq-selectbox__trigger {
+        border-left: none;
+    }
+
+    .jq-selectbox__trigger-arrow {
+        position: absolute;
+        top: 17px;
+        right: 0;
+        width: 10px;
+        height: 10px;
+        border: none;
+        background-image: url("../images/sprite.svg#angle_down");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .jq-selectbox__dropdown {
+        top: 45px;
+        cursor: pointer;
+        left: 0;
+        right: 0;
+        display: flex;
+        background-color: $white;
+        justify-content: center;
+        border: 1px solid #f2f2f2;
+        border-top: none;
+        box-shadow: 0 10px 47px 10px rgba(37, 37, 37, 0.02);
+    }
+
+    .jq-selectbox__select-text {
+        width: 100% !important;
+    }
+
+}

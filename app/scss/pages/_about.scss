@@ -1,28 +1,33 @@
 .about {
     padding: 125px 0;
 
-    @include r ($r-lg) {
+    @include r($r-lg) {
         padding: 65px 0;
     }
 
-    @include r ($r-lg) {
+    @include r($r-lg) {
         padding: 0 0 30px;
     }
 
     &__inner {
         display: flex;
-        justify-content: center;
-        margin-bottom: 120px;
+        justify-content: flex-end;
+        margin-bottom: 130px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center left;
+        background-size: contain;
 
-        @include r ($r-xl) {
+        @include r($r-xl) {
             margin-bottom: 80px;
+            background-image: none !important;
         }
 
-        @include r ($r-m) {
+        @include r($r-m) {
             margin-bottom: 50px;
         }
 
-        @include r ($r-sm) {
+        @include r($r-sm) {
             margin-bottom: 0;
         }
     }
@@ -31,7 +36,7 @@
         max-height: 675px;
         overflow: hidden;
 
-        @include r ($r-lg) {
+        @include r($r-lg) {
             display: none;
         }
 
@@ -44,11 +49,11 @@
         max-width: 600px;
         padding: 43px 0 45px 48px;
 
-        @include r ($r-lg) {
+        @include r($r-lg) {
             padding: 25px 0 25px 25px;
         }
 
-        @include r ($r-m) {
+        @include r($r-m) {
             padding: 25px 0 15px 10px;
         }
     }
@@ -89,8 +94,7 @@
     &__content {
         margin-bottom: 65px;
         line-height: 1.8;
-        @include text-clamp;
-        -webkit-line-clamp: 10;
+        @include text-clamp(10);
 
         @include r($r-lg) {
             margin-bottom: 30px;
@@ -216,18 +220,18 @@
         width: 100%;
         word-break: break-word;
         padding-top: 75px;
-        @include text-clamp;
-        -webkit-line-clamp: 5;
+        @include text-clamp(5);
+
 
         &:not(:last-child) {
             margin-right: 40px;
 
             @include r($r-lg) {
                 margin-right: 15px;
+            }
 
-                @include r($r-sm) {
-                    margin-right: 0;
-                }
+            @include r($r-sm) {
+                margin-right: 0;
             }
         }
 

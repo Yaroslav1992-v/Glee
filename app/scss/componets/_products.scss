@@ -19,9 +19,8 @@
 
     &__card {
         margin-bottom: 40px;
+        @include card-item;
         max-width: 270px;
-        width: 100%;
-        margin-right: 30px;
 
         @include r($r-lg) {
             margin-right: 15px;
@@ -34,9 +33,8 @@
     }
 
     &__blocks {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        @include cards;
+        margin-right: 0;
     }
 
     &__item {

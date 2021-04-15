@@ -28,8 +28,7 @@
 
     &__text {
         margin-bottom: 45px;
-        @include text-clamp;
-        -webkit-line-clamp: 20;
+        @include text-clamp(20);
     }
 
     &__join {
@@ -37,11 +36,8 @@
         @extend %poppins;
         font-weight: 600;
         border-radius: 5px;
-        padding: 15px 50px 10px 15px;
+        padding: 14px 57px 14px 18px;
         color: $white-100;
-        font-size: 15px;
-        position: relative;
-        transition: background-color, color ease 0.5s;
 
         &:focus {
             background-color: $black-600;
@@ -63,7 +59,8 @@
             background-image: url('../images/sprite.svg#angle-right');
             width: 15px;
             height: 11px;
-            top: 22px;
+            background-repeat: no-repeat;
+            top: 20px;
             right: 23px;
             transition: right ease 0.5s;
         }
@@ -82,7 +79,6 @@
     &__item {
         max-width: 370px;
         width: 100%;
-        height: 380px;
         margin-bottom: 40px;
         position: relative;
         box-shadow: 0 10px 47px 10px rgba(37, 37, 37, 0.05);
@@ -107,7 +103,7 @@
     }
 
     &__img {
-        max-height: 320px;
+        height: 380px;
         overflow: hidden;
     }
 
@@ -130,11 +126,6 @@
 
     }
 
-    &__person {
-        max-width: 120ch;
-        @include text-clamp;
-    }
-
     &__name {
         display: block;
         @extend %dmsans;
@@ -143,14 +134,27 @@
         line-height: 1;
         margin-bottom: 10px;
         color: $blue-dark;
+        @include text-clamp(2);
+    }
+
+    &__job {
+        @include text-clamp(2);
     }
 
     &__links {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
 
-        @include r($r-m) {
-            display: block;
+    }
+
+    &__social {
+        &:not(:last-child) {
+            margin-right: 5px;
+
+            @include r($r-m) {
+                margin-right: 0;
+            }
         }
     }
 
@@ -163,15 +167,6 @@
         align-items: center;
         background-color: #f6f6f6;
         transition: background-color ease 0.5s;
-
-        &:not(:last-child) {
-            margin-right: 5px;
-
-            @include r($r-m) {
-                margin-right: 0;
-                margin-bottom: 5px;
-            }
-        }
 
         &:focus {
             background-color: $grey-200;

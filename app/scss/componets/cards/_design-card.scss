@@ -44,7 +44,7 @@
         display: block;
         max-width: 15ch;
         overflow: hidden;
-        @include text-clamp;
-        -webkit-line-clamp: 2;
+        @include text-clamp(2);
+
     }
 }

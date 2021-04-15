@@ -1,0 +1,45 @@
+.resent {
+    padding-top: 3px;
+
+    &__item {
+        display: flex;
+
+        &:not(:last-child) {
+            margin-bottom: 25px;
+        }
+    }
+
+    &__name {
+        font-weight: 400;
+        margin-bottom: 5px;
+        font-size: 14px;
+        max-width: 150px;
+        @include text-clamp(2)
+    }
+
+    &__img {
+        border: 2px solid #f2f2f2;
+        width: 70px;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        margin-right: 20px;
+    }
+
+    &__price {
+        display: flex;
+        font-size: 15px;
+        @include text-clamp(1);
+        max-width: 120px;
+    }
+
+    &__star {
+        margin-bottom: 10px;
+    }
+
+    .jq-ry-container {
+        padding: 0;
+        width: 100% !important;
+    }
+
+}

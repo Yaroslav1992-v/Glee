@@ -1,0 +1,82 @@
+.filter {
+
+    &__input {
+        &:checked+.filter__checkbox {
+            background-color: $white-100;
+
+            @include r($r-lg) {
+                background-color: $blue-grey;
+                margin-bottom: 1px;
+            }
+        }
+    }
+
+    &__item {
+        box-shadow: 0 10px 47px 10px rgba(37, 37, 37, 0.02);
+    }
+
+    &__item:not(:last-child) {
+        margin-bottom: 50px;
+    }
+
+    &__checkbox {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 400;
+        font-size: 16px;
+        padding: 9px 22px 10px 13px;
+        cursor: pointer;
+        border-radius: 5px;
+        color: #314a57;
+
+        span {
+            max-width: 70%;
+            overflow: hidden;
+        }
+    }
+}
+
+.price {
+    padding-bottom: 25px;
+
+    &__value {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: $black-600;
+    }
+
+    .price__value {
+        padding-right: 8px;
+    }
+
+    .irs--flat .irs-line {
+        height: 2px;
+        top: 14px;
+        background-color: #c2d2db;
+    }
+
+    .irs--flat .irs-handle {
+        width: 15px;
+        height: 15px;
+        top: 8px;
+        background-color: $blue-grey;
+    }
+
+    .irs--flat .irs-bar {
+        height: 3px;
+        top: 14px;
+        background-color: $blue-grey;
+
+    }
+
+    .irs-from,
+    .irs-to,
+    .irs-max,
+    .irs-handle>i:first-child,
+    .irs-single,
+    .irs--flat .irs-handle>i:first-child,
+    .irs-min {
+        display: none;
+    }
+}

@@ -1,12 +1,31 @@
-.silder-brands {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 0 0 50px;
-    width: 100%;
+.slider-brands {
+    padding: 85px 0;
+    background-color: $white-200;
+    overflow: hidden;
 
-    @include r($r-xl) {
-        margin-left: 0;
+    @include r($r-lg) {
+        padding: 55px 0;
     }
+
+    @include r($r-m) {
+        padding: 25px 0;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+
+        margin: 0 0 0 50px;
+        width: 100%;
+        background-color: $white-200;
+
+        @include r($r-xl) {
+            margin: 0 auto;
+            justify-content: center;
+        }
+    }
+
+
 
     &__item {
 

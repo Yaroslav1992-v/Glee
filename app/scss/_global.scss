@@ -128,3 +128,24 @@ a {
 		}
 	}
 }
+
+.filter-title {
+	@extend %dmsans;
+	font-weight: 700;
+	font-size: 18px;
+	text-transform: uppercase;
+	position: relative;
+	padding-right: 55px;
+	display: inline-block;
+	margin-bottom: 20px;
+
+	&::after {
+		content: "";
+		position: absolute;
+		width: 39px;
+		height: 3px;
+		background-color: $blue-grey;
+		right: 0px;
+		top: 11px;
+	}
+}

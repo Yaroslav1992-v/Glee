@@ -108,8 +108,7 @@
         color: $blue-dark;
         line-height: 1.6;
         margin-bottom: 55px;
-        @include text-clamp;
-        -webkit-line-clamp: 5;
+        @include text-clamp(5);
     }
 
     &__link {
@@ -293,8 +292,7 @@
         font-weight: 700;
         font-size: 18px;
         color: $black-200;
-        @include text-clamp;
-        -webkit-line-clamp: 2;
+        @include text-clamp(2);
     }
 
     &__text {
