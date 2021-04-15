@@ -119,11 +119,12 @@
         }
 
         @include r($r-m) {
-            padding: 30px 15px 20px 25px;
+            padding: 30px 30px 20px 55px;
+            ;
         }
 
         @include r($r-sm) {
-            padding: 30px 10px 20px 10px;
+            padding: 30px 0px 20px 15px;
         }
 
         &:not(:last-child) {
@@ -152,8 +153,12 @@
             }
 
             @include r($r-m) {
-                left: 25px;
+                left: 65px;
                 top: -8px;
+            }
+
+            @include r($r-sm) {
+                left: 20px
             }
         }
 
