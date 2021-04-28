@@ -5,16 +5,17 @@
         display: flex;
 
         &:not(:last-child) {
-            margin-bottom: 25px;
+            margin-bottom: 23px;
         }
     }
 
     &__name {
+        color: #333333;
         font-weight: 400;
-        margin-bottom: 5px;
+        margin-bottom: 3px;
         font-size: 14px;
-        max-width: 150px;
-        @include text-clamp(2)
+        max-width: 190px;
+        @include text-clamp(4)
     }
 
     &__img {
@@ -40,6 +41,25 @@
     .jq-ry-container {
         padding: 0;
         width: 100% !important;
+    }
+
+    &__date {
+        padding-left: 20px;
+        font-size: 12px;
+        color: $grey;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            background-image: url('../images/sprite.svg#calendar-grey');
+            height: 13px;
+            width: 13px;
+            left: 0px;
+            top: 1px;
+            background-size: cover;
+
+        }
     }
 
 }

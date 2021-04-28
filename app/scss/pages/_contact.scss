@@ -1,0 +1,202 @@
+.contact {
+    padding: 115px 0 100px;
+
+    @include r($r-lg) {
+        padding: 80px 0;
+    }
+
+    @include r($r-m) {
+        padding: 40px 0;
+    }
+
+    @include r($r-sm) {
+        padding: 25px 0;
+    }
+
+    &__subtitle {
+        display: block;
+        text-align: center;
+        @extend %poppins;
+        font-weight: 700;
+        color: $blue-grey;
+    }
+
+    &__title {
+        margin-bottom: 60px;
+
+        @include r($r-m) {
+            margin-bottom: 30px;
+        }
+
+    }
+
+    &__list {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 90px;
+        flex-wrap: wrap;
+
+        @include r($r-lg) {
+            margin-bottom: 60px;
+        }
+
+        @include r($r-m) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__item {
+        background-color: #fbfbfb;
+        max-width: 370px;
+        width: 100%;
+        padding: 70px 0;
+        border: 2px solid transparent;
+        transition: border-color ease 0.5s;
+        margin-bottom: 30px;
+
+        @include r($r-m) {
+            border-radius: 10px;
+            padding: 30px 0;
+            box-shadow: 0 6px 47px 3px rgba(37, 37, 37, 0.02);
+        }
+
+        &:not(:last-child) {
+            margin-right: 30px;
+
+            @include r($r-m) {
+                margin-right: 0;
+            }
+        }
+
+        &:hover {
+            border-color: $blue-grey;
+
+            .contact__img {
+                background-color: $blue-grey;
+
+                svg {
+                    fill: $white;
+                }
+            }
+        }
+    }
+
+    &__img {
+        border-radius: 20px;
+        background-color: $white;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 60px;
+        transition: background-color ease 0.5s;
+
+        @include r($r-m) {
+            margin-bottom: 30px;
+        }
+
+        svg {
+            transition: fill ease 0.5s;
+        }
+    }
+
+    &__name {
+        @extend %dmsans;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 1.9;
+        color: #565872;
+
+        p {
+            max-width: 200px;
+            @include text-clamp(6);
+        }
+
+    }
+
+    &__link {
+        @include text-clamp;
+    }
+
+    &__contact {
+        display: flex;
+        justify-content: space-between;
+
+        @include r($r-xl) {
+            flex-direction: column-reverse;
+        }
+
+        .form {
+            max-width: 620px;
+            width: 100%;
+
+            @include r($r-xl) {
+                max-width: 100%;
+            }
+
+
+            &__input {
+                max-width: 300px;
+                width: 100%;
+
+                @include r($r-xl) {
+                    max-width: 100%;
+                }
+
+                &--name {
+                    background-image: url("../images/sprite.svg#inputuser");
+                    background-size: 18px 15px;
+                }
+
+                &--email {
+                    background-image: url("../images/sprite.svg#letter");
+                    background-size: 20px 16px;
+                }
+
+                &::placeholder {
+                    color: #808195;
+                    font-size: 16px;
+                }
+            }
+
+
+            &__textarea {
+                min-height: 175px;
+                margin-bottom: 30px;
+                padding: 18px;
+
+                &::placeholder {
+                    color: #808195;
+                    font-size: 16px;
+                }
+            }
+
+            &__submit {
+                padding: 14px 48px;
+            }
+
+        }
+    }
+}
+
+#map {
+    width: 500px;
+    height: 335px;
+
+    @include r($r-xl) {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    @include r($r-m) {
+        display: none;
+    }
+}

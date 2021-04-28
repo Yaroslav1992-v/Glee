@@ -1,0 +1,29 @@
+@@include('../parts/_head.html')
+
+<body>
+    @@include('../parts/_header.html')
+    <main>
+        @@include('../parts/_page.html',{
+        "page-title": "Contact",
+        "page-name": "Contact",
+        "href": "blog.html",
+        })
+        @@include('../parts/_contact.html')
+    </main>
+    @@include('../parts/_footer.html')
+    <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=&v=weekly" async></script>
+
+    <script>
+        let map;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: {
+                    lat: 29.7632508192897,
+                    lng: -95.3615052821379
+                },
+                zoom: 8
+            });
+        }
+    </script>
+    @@include('../parts/_footer-script.html')

@@ -1,0 +1,148 @@
+.login {
+    padding-top: 115px;
+    color: $blue-dark;
+
+    @include r($r-lg) {
+        padding-top: 70px;
+    }
+
+    @include r($r-m) {
+        padding-top: 30px;
+    }
+
+    &__form {
+        max-width: 480px;
+        margin: 0 auto;
+        font-size: 14px;
+        padding-bottom: 30px;
+        border-bottom: 2px solid #f6f6f6;
+        margin-bottom: 30px;
+    }
+
+    &__label {
+        display: block;
+        margin-bottom: 10px;
+        padding-left: 5px;
+
+    }
+
+    &__inputs {
+        margin-bottom: 45px;
+
+        @include r($r-m) {
+            margin-bottom: 25px;
+        }
+    }
+
+    &__input {
+        display: block;
+        width: 100%;
+        border: 2px solid #f6f6f6;
+        height: 60px;
+
+        &:not(:last-child) {
+            margin-bottom: 25px;
+        }
+    }
+
+    &__link {
+        transition: all ease 0.5s;
+
+        &:hover {
+            color: $blue-grey;
+        }
+    }
+
+    &__submit {
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
+        height: 60px;
+        background-color: $blue-grey;
+        color: $white;
+        font-weight: 500;
+        margin-bottom: 30px;
+        border: 2px solid transparent;
+        transition: all color ease 0.5s;
+
+        &:focus {
+            border-color: $black-600;
+        }
+
+        &:hover {
+            background-color: transparent;
+            color: $black-600;
+            border-color: $blue-grey;
+            font-weight: 500;
+
+        }
+
+        &:active {
+            border-color: $blue-dark;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    &__checkbox {
+        display: flex;
+        align-items: center;
+
+        span {
+            padding-left: 10px;
+            font-size: 14px;
+        }
+    }
+
+    &__register {
+        max-width: 480px;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 120px;
+
+        @include r($r-lg) {
+            margin-bottom: 70px;
+        }
+
+        @include r($r-m) {
+            margin-bottom: 30px;
+        }
+
+        span {
+            margin-bottom: 20px;
+            display: block;
+        }
+    }
+
+    &__reglink {
+        font-size: 18px;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        height: 60px;
+        border: 2px solid $blue-grey;
+        transition: border-color, background-color ease 0.5s;
+
+        &:focus {
+            border-color: $black-600;
+        }
+
+        &:hover {
+            background-color: $blue-grey;
+            color: $white;
+            font-weight: 400;
+
+        }
+
+        &:active {
+            border-color: $blue-dark;
+        }
+    }
+}
